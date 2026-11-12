@@ -1,0 +1,1583 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7ecdc;
+    color: #171717;
+}
+
+.dashboard {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+}
+
+
+/* ==========================================
+   SIDEBAR
+========================================== */
+
+.sidebar {
+    width: 262px;
+    min-height: 100vh;
+    background: #673d1c;
+    color: white;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 20px;
+    overflow: hidden;
+    transition:
+        width 0.3s ease,
+        padding 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+/* ==========================================
+   BRAND
+========================================== */
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 220px;
+}
+
+.brand-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #f8f7f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.brand-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 5px;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.25;
+    white-space: nowrap;
+}
+
+.brand-text strong {
+    font-size: 13px;
+}
+
+.brand-text span {
+    font-size: 10px;
+    margin-top: 2px;
+}
+
+
+/* ==========================================
+   GARIS
+========================================== */
+
+.sidebar-line {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.45);
+    margin: 28px 6px 17px;
+}
+
+
+/* ==========================================
+   MENU TITLE
+========================================== */
+
+.menu-title {
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 14px;
+    white-space: nowrap;
+}
+
+
+/* ==========================================
+   MENU
+========================================== */
+
+.menu {
+    width: 100%;
+}
+
+.menu-item {
+    width: 100%;
+    height: 42px;
+    margin-bottom: 10px;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-radius: 6px;
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    white-space: nowrap;
+    transition: background 0.2s ease;
+}
+
+.menu-item i {
+    width: 17px;
+    text-align: center;
+    font-size: 13px;
+    flex-shrink: 0;
+}
+
+.menu-item:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.menu-item.active {
+    background: #bd8b52;
+}
+
+
+/* ==========================================
+   LOGOUT
+========================================== */
+
+.logout {
+    width: 100%;
+    margin-top: auto;
+    padding-top: 15px;
+}
+
+.logout form {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.logout button {
+    width: 100%;
+    height: 44px;
+    padding: 0 14px;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    background: #bd8b52;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    font-weight: normal;
+    text-align: left;
+    white-space: nowrap;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.logout button i {
+    width: 17px;
+    min-width: 17px;
+    text-align: center;
+    font-size: 13px;
+}
+
+.logout button:hover {
+    background: #c99a63;
+}
+
+
+/* ==========================================
+   DESKTOP TOGGLE
+========================================== */
+
+.sidebar.hide {
+    width: 78px;
+    padding-left: 11px;
+    padding-right: 11px;
+}
+
+.sidebar.hide .brand-text,
+.sidebar.hide .menu-title,
+.sidebar.hide .menu-item span,
+.sidebar.hide .logout span {
+    display: none;
+}
+
+.sidebar.hide .brand {
+    justify-content: center;
+    min-width: 56px;
+}
+
+.sidebar.hide .sidebar-line {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.sidebar.hide .menu-item {
+    justify-content: center;
+    padding-left: 0;
+    padding-right: 0;
+    gap: 0;
+}
+
+.sidebar.hide .logout button {
+    justify-content: center;
+    padding-left: 0;
+    padding-right: 0;
+    gap: 0;
+}
+
+
+/* ==========================================
+   MAIN
+========================================== */
+
+.main {
+    flex: 1;
+    min-width: 0;
+}
+
+
+/* ==========================================
+   TOPBAR
+========================================== */
+
+.topbar {
+    width: 100%;
+    height: 85px;
+    background: #faf9f6;
+    border-top: 1px solid #d7d0c8;
+    border-bottom: 1px solid #ded6cd;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 42px;
+}
+
+.topbar-left {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.topbar-left h1 {
+    font-size: 29px;
+    font-weight: 700;
+}
+
+
+/* ==========================================
+   TOGGLE
+========================================== */
+
+.toggle-btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: transparent;
+    color: #603b1d;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+}
+
+.toggle-btn:hover {
+    background: #eee3d5;
+}
+
+
+/* ==========================================
+   ADMIN
+========================================== */
+
+.admin {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.admin-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: #eee4ff;
+    color: #7048a8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 21px;
+}
+
+.admin-text strong {
+    display: block;
+    font-size: 13px;
+}
+
+.admin-text span {
+    display: block;
+    font-size: 11px;
+    margin-top: 4px;
+}
+
+
+/* ==========================================
+   CONTENT
+========================================== */
+
+.content {
+    width: 100%;
+    padding: 0 22px 35px;
+}
+
+
+/* ==========================================
+   WELCOME
+========================================== */
+
+.welcome {
+    width: 100%;
+    padding: 48px 85px;
+    background: #f7ecdc;
+}
+
+.welcome h2 {
+    font-size: 29px;
+    margin-bottom: 9px;
+}
+
+.welcome p {
+    font-size: 16px;
+}
+
+
+/* ==========================================
+   STATS
+========================================== */
+
+.stats {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.stat-card {
+    min-height: 137px;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding: 25px 32px;
+}
+
+.stat-icon {
+    font-size: 27px;
+    width: 35px;
+    text-align: center;
+}
+
+.stat-icon.artikel {
+    color: #36a0d2;
+}
+
+.stat-icon.galeri {
+    color: #e76580;
+}
+
+.stat-icon.layanan {
+    color: #202020;
+}
+
+.stat-icon.user {
+    color: #e9a532;
+}
+
+.stat-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-info span {
+    font-size: 21px;
+    margin-bottom: 8px;
+}
+
+.stat-info strong {
+    font-size: 31px;
+    font-weight: 400;
+    margin-bottom: 7px;
+}
+
+.stat-info small {
+    font-size: 12px;
+}
+
+
+/* ==========================================
+   BOTTOM
+========================================== */
+
+.bottom-section {
+    width: 100%;
+    display: grid;
+    grid-template-columns:
+        minmax(0, 1fr)
+        550px;
+    gap: 25px;
+    margin-top: 17px;
+}
+
+
+/* ==========================================
+   AKTIVITAS
+========================================== */
+
+.activity {
+    background: transparent;
+    padding: 20px 22px 15px;
+}
+
+.activity h2,
+.quick-action h2 {
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 28px;
+}
+
+.activity-list {
+    width: 100%;
+}
+
+.activity-item {
+    min-height: 51px;
+    border-bottom: 1px solid #8c837b;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    font-size: 14px;
+}
+
+
+/* ==========================================
+   AKSI CEPAT
+========================================== */
+
+.quick-action {
+    background: #ffffff;
+    padding: 22px 23px 25px;
+}
+
+.quick-item {
+    width: 100%;
+    height: 49px;
+    margin-bottom: 16px;
+    background: #dddddd;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 0 22px;
+    color: #171717;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.quick-item:last-child {
+    margin-bottom: 0;
+}
+
+.quick-item i {
+    width: 22px;
+    text-align: center;
+}
+
+.quick-item:hover {
+    background: #d0d0d0;
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media screen and (max-width: 1100px) {
+
+    .sidebar {
+        width: 230px;
+    }
+
+    .welcome {
+        padding: 40px 45px;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .bottom-section {
+        grid-template-columns: 1fr;
+    }
+
+    .quick-action {
+        width: 100%;
+    }
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media screen and (max-width: 700px) {
+
+    .dashboard {
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+    }
+
+
+    /* ======================================
+       MAIN
+    ====================================== */
+
+    .main {
+        width: 100%;
+        min-width: 0;
+        flex: 1;
+    }
+
+
+    /* ======================================
+       SIDEBAR MOBILE
+    ====================================== */
+
+    .sidebar {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 260px !important;
+        max-width: 260px !important;
+        height: 100vh !important;
+        min-height: 100vh !important;
+        padding: 24px 20px !important;
+        z-index: 9998 !important;
+        transform: translateX(-100%) !important;
+        transition: transform 0.3s ease !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+    }
+
+
+    /* SIDEBAR TERBUKA */
+
+    .sidebar.mobile-open {
+        width: 260px !important;
+        max-width: 260px !important;
+        height: 100vh !important;
+        transform: translateX(0) !important;
+    }
+
+
+    /* ======================================
+       TOMBOL SAAT NORMAL
+    ====================================== */
+
+    .toggle-btn {
+        position: fixed !important;
+        top: 17px !important;
+        left: 18px !important;
+        width: 42px !important;
+        height: 42px !important;
+        z-index: 10001 !important;
+        background: #faf9f6 !important;
+        color: #603b1d !important;
+        border: none !important;
+        border-radius: 6px !important;
+        cursor: pointer !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+        transition: left 0.3s ease !important;
+    }
+
+
+    /* ======================================
+       TOMBOL SAAT SIDEBAR TERBUKA
+    ====================================== */
+
+    .toggle-btn.mobile-toggle-open {
+        left: 275px !important;
+        z-index: 10002 !important;
+        background: #faf9f6 !important;
+        color: #603b1d !important;
+    }
+
+
+    /* ======================================
+       KEMBALIKAN TULISAN SIDEBAR
+    ====================================== */
+
+    .sidebar.mobile-open .brand-text {
+        display: flex !important;
+    }
+
+    .sidebar.mobile-open .menu-title {
+        display: block !important;
+    }
+
+    .sidebar.mobile-open .menu-item span {
+        display: inline !important;
+    }
+
+    .sidebar.mobile-open .logout span {
+        display: inline !important;
+    }
+
+
+    /* BRAND */
+
+    .sidebar.mobile-open .brand {
+        justify-content: flex-start !important;
+        min-width: 220px !important;
+    }
+
+
+    /* MENU */
+
+    .sidebar.mobile-open .menu-item {
+        justify-content: flex-start !important;
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+        gap: 15px !important;
+    }
+
+
+    /* LOGOUT */
+
+    .sidebar.mobile-open .logout button {
+        justify-content: flex-start !important;
+        padding-left: 14px !important;
+        padding-right: 14px !important;
+        gap: 14px !important;
+    }
+
+
+    /* ======================================
+       TOPBAR
+    ====================================== */
+
+    .topbar {
+        width: 100%;
+        height: 75px;
+        padding: 0 18px;
+    }
+
+    .topbar-left {
+        gap: 10px;
+        padding-left: 55px;
+    }
+
+    .topbar-left h1 {
+        font-size: 23px;
+    }
+
+
+    /* ADMIN */
+
+    .admin {
+        display: none;
+    }
+
+
+    /* ======================================
+       CONTENT
+    ====================================== */
+
+    .content {
+        width: 100%;
+        padding: 0 12px 25px;
+    }
+
+    .welcome {
+        padding: 32px 20px;
+    }
+
+    .welcome h2 {
+        font-size: 23px;
+        line-height: 1.3;
+    }
+
+    .welcome p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+
+    /* ======================================
+       STAT
+    ====================================== */
+
+    .stats {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .stat-card {
+        min-height: 110px;
+        padding: 22px;
+    }
+
+
+    /* ======================================
+       BOTTOM
+    ====================================== */
+
+    .bottom-section {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .activity {
+        padding: 20px 10px;
+    }
+
+    .quick-action {
+        padding: 20px;
+    }
+
+    .quick-item {
+        font-size: 14px;
+    }
+}
+
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media screen and (max-width: 430px) {
+
+    .welcome {
+        padding: 28px 17px;
+    }
+
+    .welcome h2 {
+        font-size: 21px;
+    }
+
+    .stat-info span {
+        font-size: 18px;
+    }
+
+    .stat-info strong {
+        font-size: 27px;
+    }
+}* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7ecdc;
+    color: #171717;
+}
+
+.dashboard {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+}
+
+
+/* ==========================================
+   SIDEBAR
+========================================== */
+
+.sidebar {
+    width: 262px;
+    min-height: 100vh;
+    background: #673d1c;
+    color: white;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 20px;
+    overflow: hidden;
+    transition:
+        width 0.3s ease,
+        padding 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+/* ==========================================
+   BRAND
+========================================== */
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 220px;
+}
+
+.brand-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #f8f7f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.brand-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 5px;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.25;
+    white-space: nowrap;
+}
+
+.brand-text strong {
+    font-size: 13px;
+}
+
+.brand-text span {
+    font-size: 10px;
+    margin-top: 2px;
+}
+
+
+/* ==========================================
+   GARIS
+========================================== */
+
+.sidebar-line {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.45);
+    margin: 28px 6px 17px;
+}
+
+
+/* ==========================================
+   MENU TITLE
+========================================== */
+
+.menu-title {
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 14px;
+    white-space: nowrap;
+}
+
+
+/* ==========================================
+   MENU
+========================================== */
+
+.menu {
+    width: 100%;
+}
+
+.menu-item {
+    width: 100%;
+    height: 42px;
+    margin-bottom: 10px;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-radius: 6px;
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    white-space: nowrap;
+    transition: background 0.2s ease;
+}
+
+.menu-item i {
+    width: 17px;
+    text-align: center;
+    font-size: 13px;
+    flex-shrink: 0;
+}
+
+.menu-item:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.menu-item.active {
+    background: #bd8b52;
+}
+
+
+/* ==========================================
+   LOGOUT
+========================================== */
+
+.logout {
+    width: 100%;
+    margin-top: auto;
+    padding-top: 15px;
+}
+
+.logout form {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.logout button {
+    width: 100%;
+    height: 44px;
+    padding: 0 14px;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    background: #bd8b52;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    font-weight: normal;
+    text-align: left;
+    white-space: nowrap;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.logout button i {
+    width: 17px;
+    min-width: 17px;
+    text-align: center;
+    font-size: 13px;
+}
+
+.logout button:hover {
+    background: #c99a63;
+}
+
+
+/* ==========================================
+   DESKTOP TOGGLE
+========================================== */
+
+.sidebar.hide {
+    width: 78px;
+    padding-left: 11px;
+    padding-right: 11px;
+}
+
+.sidebar.hide .brand-text,
+.sidebar.hide .menu-title,
+.sidebar.hide .menu-item span,
+.sidebar.hide .logout span {
+    display: none;
+}
+
+.sidebar.hide .brand {
+    justify-content: center;
+    min-width: 56px;
+}
+
+.sidebar.hide .sidebar-line {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.sidebar.hide .menu-item {
+    justify-content: center;
+    padding-left: 0;
+    padding-right: 0;
+    gap: 0;
+}
+
+.sidebar.hide .logout button {
+    justify-content: center;
+    padding-left: 0;
+    padding-right: 0;
+    gap: 0;
+}
+
+
+/* ==========================================
+   MAIN
+========================================== */
+
+.main {
+    flex: 1;
+    min-width: 0;
+}
+
+
+/* ==========================================
+   TOPBAR
+========================================== */
+
+.topbar {
+    width: 100%;
+    height: 85px;
+    background: #faf9f6;
+    border-top: 1px solid #d7d0c8;
+    border-bottom: 1px solid #ded6cd;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 42px;
+}
+
+.topbar-left {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.topbar-left h1 {
+    font-size: 29px;
+    font-weight: 700;
+}
+
+
+/* ==========================================
+   TOGGLE
+========================================== */
+
+.toggle-btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: transparent;
+    color: #603b1d;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+}
+
+.toggle-btn:hover {
+    background: #eee3d5;
+}
+
+
+/* ==========================================
+   ADMIN
+========================================== */
+
+.admin {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.admin-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: #eee4ff;
+    color: #7048a8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 21px;
+}
+
+.admin-text strong {
+    display: block;
+    font-size: 13px;
+}
+
+.admin-text span {
+    display: block;
+    font-size: 11px;
+    margin-top: 4px;
+}
+
+
+/* ==========================================
+   CONTENT
+========================================== */
+
+.content {
+    width: 100%;
+    padding: 0 22px 35px;
+}
+
+
+/* ==========================================
+   WELCOME
+========================================== */
+
+.welcome {
+    width: 100%;
+    padding: 48px 85px;
+    background: #f7ecdc;
+}
+
+.welcome h2 {
+    font-size: 29px;
+    margin-bottom: 9px;
+}
+
+.welcome p {
+    font-size: 16px;
+}
+
+
+/* ==========================================
+   STATS
+========================================== */
+
+.stats {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.stat-card {
+    min-height: 137px;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding: 25px 32px;
+}
+
+.stat-icon {
+    font-size: 27px;
+    width: 35px;
+    text-align: center;
+}
+
+.stat-icon.artikel {
+    color: #36a0d2;
+}
+
+.stat-icon.galeri {
+    color: #e76580;
+}
+
+.stat-icon.layanan {
+    color: #202020;
+}
+
+.stat-icon.user {
+    color: #e9a532;
+}
+
+.stat-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-info span {
+    font-size: 21px;
+    margin-bottom: 8px;
+}
+
+.stat-info strong {
+    font-size: 31px;
+    font-weight: 400;
+    margin-bottom: 7px;
+}
+
+.stat-info small {
+    font-size: 12px;
+}
+
+
+/* ==========================================
+   BOTTOM
+========================================== */
+
+.bottom-section {
+    width: 100%;
+    display: grid;
+    grid-template-columns:
+        minmax(0, 1fr)
+        550px;
+    gap: 25px;
+    margin-top: 17px;
+}
+
+
+/* ==========================================
+   AKTIVITAS
+========================================== */
+
+.activity {
+    background: transparent;
+    padding: 20px 22px 15px;
+}
+
+.activity h2,
+.quick-action h2 {
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 28px;
+}
+
+.activity-list {
+    width: 100%;
+}
+
+.activity-item {
+    min-height: 51px;
+    border-bottom: 1px solid #8c837b;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    font-size: 14px;
+}
+
+
+/* ==========================================
+   AKSI CEPAT
+========================================== */
+
+.quick-action {
+    background: #ffffff;
+    padding: 22px 23px 25px;
+}
+
+.quick-item {
+    width: 100%;
+    height: 49px;
+    margin-bottom: 16px;
+    background: #dddddd;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 0 22px;
+    color: #171717;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.quick-item:last-child {
+    margin-bottom: 0;
+}
+
+.quick-item i {
+    width: 22px;
+    text-align: center;
+}
+
+.quick-item:hover {
+    background: #d0d0d0;
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media screen and (max-width: 1100px) {
+
+    .sidebar {
+        width: 230px;
+    }
+
+    .welcome {
+        padding: 40px 45px;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .bottom-section {
+        grid-template-columns: 1fr;
+    }
+
+    .quick-action {
+        width: 100%;
+    }
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media screen and (max-width: 700px) {
+
+    .dashboard {
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+    }
+
+
+    /* ======================================
+       MAIN
+    ====================================== */
+
+    .main {
+        width: 100%;
+        min-width: 0;
+        flex: 1;
+    }
+
+
+    /* ======================================
+       SIDEBAR MOBILE
+    ====================================== */
+
+    .sidebar {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 260px !important;
+        max-width: 260px !important;
+        height: 100vh !important;
+        min-height: 100vh !important;
+        padding: 24px 20px !important;
+        z-index: 9998 !important;
+        transform: translateX(-100%) !important;
+        transition: transform 0.3s ease !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+    }
+
+
+    /* SIDEBAR TERBUKA */
+
+    .sidebar.mobile-open {
+        width: 260px !important;
+        max-width: 260px !important;
+        height: 100vh !important;
+        transform: translateX(0) !important;
+    }
+
+
+    /* ======================================
+       TOMBOL SAAT NORMAL
+    ====================================== */
+
+    .toggle-btn {
+        position: fixed !important;
+        top: 17px !important;
+        left: 18px !important;
+        width: 42px !important;
+        height: 42px !important;
+        z-index: 10001 !important;
+        background: #faf9f6 !important;
+        color: #603b1d !important;
+        border: none !important;
+        border-radius: 6px !important;
+        cursor: pointer !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+        transition: left 0.3s ease !important;
+    }
+
+
+    /* ======================================
+       TOMBOL SAAT SIDEBAR TERBUKA
+    ====================================== */
+
+    .toggle-btn.mobile-toggle-open {
+        left: 275px !important;
+        z-index: 10002 !important;
+        background: #faf9f6 !important;
+        color: #603b1d !important;
+    }
+
+
+    /* ======================================
+       KEMBALIKAN TULISAN SIDEBAR
+    ====================================== */
+
+    .sidebar.mobile-open .brand-text {
+        display: flex !important;
+    }
+
+    .sidebar.mobile-open .menu-title {
+        display: block !important;
+    }
+
+    .sidebar.mobile-open .menu-item span {
+        display: inline !important;
+    }
+
+    .sidebar.mobile-open .logout span {
+        display: inline !important;
+    }
+
+
+    /* BRAND */
+
+    .sidebar.mobile-open .brand {
+        justify-content: flex-start !important;
+        min-width: 220px !important;
+    }
+
+
+    /* MENU */
+
+    .sidebar.mobile-open .menu-item {
+        justify-content: flex-start !important;
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+        gap: 15px !important;
+    }
+
+
+    /* LOGOUT */
+
+    .sidebar.mobile-open .logout button {
+        justify-content: flex-start !important;
+        padding-left: 14px !important;
+        padding-right: 14px !important;
+        gap: 14px !important;
+    }
+
+
+    /* ======================================
+       TOPBAR
+    ====================================== */
+
+    .topbar {
+        width: 100%;
+        height: 75px;
+        padding: 0 18px;
+    }
+
+    .topbar-left {
+        gap: 10px;
+        padding-left: 55px;
+    }
+
+    .topbar-left h1 {
+        font-size: 23px;
+    }
+
+
+    /* ADMIN */
+
+    .admin {
+        display: none;
+    }
+
+
+    /* ======================================
+       CONTENT
+    ====================================== */
+
+    .content {
+        width: 100%;
+        padding: 0 12px 25px;
+    }
+
+    .welcome {
+        padding: 32px 20px;
+    }
+
+    .welcome h2 {
+        font-size: 23px;
+        line-height: 1.3;
+    }
+
+    .welcome p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+
+    /* ======================================
+       STAT
+    ====================================== */
+
+    .stats {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .stat-card {
+        min-height: 110px;
+        padding: 22px;
+    }
+
+
+    /* ======================================
+       BOTTOM
+    ====================================== */
+
+    .bottom-section {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .activity {
+        padding: 20px 10px;
+    }
+
+    .quick-action {
+        padding: 20px;
+    }
+
+    .quick-item {
+        font-size: 14px;
+    }
+}
+
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media screen and (max-width: 430px) {
+
+    .welcome {
+        padding: 28px 17px;
+    }
+
+    .welcome h2 {
+        font-size: 21px;
+    }
+
+    .stat-info span {
+        font-size: 18px;
+    }
+
+    .stat-info strong {
+        font-size: 27px;
+    }
+}

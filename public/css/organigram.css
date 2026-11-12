@@ -1,0 +1,969 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family: "Times New Roman", serif;
+    background: #eee4d8;
+    color: #3b2a20;
+}
+
+.website {
+    width: 100%;
+    min-height: 100vh;
+}
+
+
+/* ========================================
+   NAVBAR
+======================================== */
+
+.navbar {
+    width: 100%;
+    min-height: 65px;
+
+    background: #5a301b;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 4%;
+
+    position: relative;
+    z-index: 1000;
+}
+
+
+/* ========================================
+   BRAND
+======================================== */
+
+.brand {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    min-width: 0;
+}
+
+.logo {
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    background: #eeeeee;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+.brand-name {
+    display: flex;
+    flex-direction: column;
+
+    color: white;
+
+    min-width: 0;
+}
+
+.brand-name strong {
+    font-size: 19px;
+
+    line-height: 1;
+}
+
+.brand-name span {
+    font-size: 12px;
+
+    margin-top: 5px;
+}
+
+
+/* ========================================
+   MENU
+======================================== */
+
+.menu {
+    display: flex;
+    align-items: center;
+
+    gap: 28px;
+}
+
+.menu a {
+    text-decoration: none;
+
+    color: white;
+
+    font-size: 15px;
+
+    white-space: nowrap;
+
+    transition: 0.2s;
+}
+
+.menu a:hover {
+    color: #efa064;
+}
+
+.menu a.active {
+    color: #efa064;
+}
+
+.menu .login {
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+}
+
+
+/* ========================================
+   HAMBURGER
+======================================== */
+
+.menu-toggle {
+    display: none;
+
+    border: none;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+    padding: 5px;
+}
+
+
+/* ========================================
+   CONTENT
+======================================== */
+
+.content {
+    width: 100%;
+
+    min-height: calc(100vh - 175px);
+
+    padding: 28px 30px 70px;
+
+    background: #fffaf5;
+}
+
+.page-title {
+    text-align: center;
+
+    font-size: 26px;
+
+    margin: 0 0 42px;
+
+    color: #4b3022;
+}
+
+
+/* ========================================
+   ORGANISASI
+======================================== */
+
+.organization {
+    width: 100%;
+
+    max-width: 720px;
+
+    margin: 0 auto;
+}
+
+
+/* ========================================
+   CARD
+======================================== */
+
+.person-card {
+    width: 196px;
+    height: 65px;
+
+    background: #70482f;
+
+    border-radius: 9px;
+
+    padding: 10px 12px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* ========================================
+   FOTO
+======================================== */
+
+.person-photo {
+    width: 43px;
+    height: 43px;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    background: #f5eee7;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    color: #777777;
+}
+
+.person-photo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+.person-photo i {
+    font-size: 18px;
+}
+
+
+/* ========================================
+   INFORMASI
+======================================== */
+
+.person-info {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+}
+
+.person-info h3 {
+    font-size: 18px;
+
+    line-height: 1;
+
+    color: #f2dfca;
+
+    word-break: break-word;
+}
+
+.person-info p {
+    font-size: 11px;
+
+    margin-top: 6px;
+
+    color: #d8c7b7;
+
+    line-height: 1.2;
+}
+
+
+/* ========================================
+   LEVEL ATAS
+======================================== */
+
+.org-top {
+    display: flex;
+
+    justify-content: center;
+}
+
+
+/* ========================================
+   GARIS DARI LEVEL ATAS
+======================================== */
+
+.line-top {
+    width: 1px;
+
+    height: 45px;
+
+    background: #9a8373;
+
+    margin: 0 auto;
+}
+
+
+/* ========================================
+   LEVEL 2
+======================================== */
+
+.org-middle {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    position: relative;
+}
+
+
+/* ========================================
+   GARIS HORIZONTAL LEVEL 2
+======================================== */
+
+.org-middle::before {
+    content: "";
+
+    position: absolute;
+
+    top: -23px;
+
+    left: 98px;
+    right: 98px;
+
+    height: 1px;
+
+    background: #9a8373;
+}
+
+
+/* ========================================
+   GARIS VERTIKAL LEVEL 2
+======================================== */
+
+.org-middle .person-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 1px;
+
+    height: 23px;
+
+    background: #9a8373;
+
+    top: -23px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+}
+
+
+/* ========================================
+   LEVEL 3
+======================================== */
+
+.org-bottom {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-top: 70px;
+
+    position: relative;
+}
+
+
+/* ========================================
+   GARIS LEVEL 3
+======================================== */
+
+.org-bottom .person-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 1px;
+
+    height: 70px;
+
+    background: #9a8373;
+
+    top: -70px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+}
+
+
+/* ========================================
+   DATA KOSONG
+======================================== */
+
+.empty-organigram {
+    width: 100%;
+
+    min-height: 250px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    color: #8a7567;
+}
+
+.empty-organigram i {
+    font-size: 45px;
+
+    color: #b99b82;
+
+    margin-bottom: 15px;
+}
+
+.empty-organigram h3 {
+    font-size: 18px;
+
+    color: #70482f;
+
+    margin-bottom: 7px;
+}
+
+.empty-organigram p {
+    font-size: 13px;
+
+    color: #8a7567;
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+.footer {
+    width: 100%;
+}
+
+.footer-content {
+    width: 100%;
+
+    min-height: 104px;
+
+    background: #5a301b;
+
+    color: white;
+
+    display: grid;
+
+    grid-template-columns:
+        1.15fr
+        1.3fr
+        1fr
+        1.4fr;
+
+    align-items: center;
+
+    padding: 15px 2%;
+}
+
+.footer-brand {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding-right: 20px;
+}
+
+.footer-logo {
+    width: 43px;
+    height: 43px;
+
+    border-radius: 50%;
+
+    background: #eeeeee;
+
+    overflow: hidden;
+
+    flex-shrink: 0;
+}
+
+.footer-logo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+.footer-brand h3 {
+    font-size: 20px;
+
+    line-height: 1;
+}
+
+.footer-brand span {
+    font-size: 11px;
+}
+
+.footer-description {
+    text-align: center;
+
+    border-left: 1px solid rgba(255,255,255,0.5);
+
+    padding: 0 20px;
+}
+
+.footer-description p {
+    font-size: 13px;
+
+    line-height: 1.35;
+
+    margin-bottom: 8px;
+}
+
+.footer-social {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 18px;
+
+    margin-top: 7px;
+}
+
+.footer-social a {
+    color: #ffffff;
+
+    font-size: 18px;
+
+    text-decoration: none;
+}
+
+.footer-contact {
+    border-left: 1px solid rgba(255,255,255,0.5);
+
+    padding: 0 20px;
+}
+
+.footer-contact p {
+    font-size: 11px;
+
+    margin-bottom: 7px;
+}
+
+.footer-contact i {
+    width: 17px;
+}
+
+.footer-contact small {
+    display: block;
+
+    margin-left: 22px;
+
+    font-size: 8px;
+}
+
+.footer-address {
+    border-left: 1px solid rgba(255,255,255,0.5);
+
+    padding-left: 20px;
+}
+
+.footer-address p {
+    font-size: 11px;
+
+    line-height: 1.45;
+
+    margin-bottom: 6px;
+}
+
+.footer-address i {
+    margin-right: 5px;
+}
+
+.copyright {
+    width: 100%;
+
+    min-height: 44px;
+
+    background: #f7ddba;
+
+    color: #21160f;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 0 2%;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+
+/* ========================================
+   RESPONSIVE 1100
+======================================== */
+
+@media (max-width: 1100px) {
+
+    .navbar {
+        padding: 0 5%;
+    }
+
+    .menu {
+        gap: 20px;
+    }
+
+    .content {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .organization {
+        max-width: 700px;
+    }
+
+    .footer-content {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .copyright {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
+
+
+/* ========================================
+   RESPONSIVE 768
+======================================== */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        height: 70px;
+
+        padding: 0 25px;
+
+        position: relative;
+    }
+
+    .menu {
+        display: none;
+
+        position: absolute;
+
+        top: 70px;
+        left: 0;
+
+        width: 100%;
+
+        background: #5a301b;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 0;
+
+        padding: 10px 25px 20px;
+
+        z-index: 100;
+    }
+
+    .menu.show {
+        display: flex;
+    }
+
+    .menu a {
+        width: 100%;
+
+        padding: 12px 0;
+
+        font-size: 15px;
+
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+
+    /* CONTENT */
+
+    .content {
+        padding: 25px;
+
+        min-height: auto;
+    }
+
+    .page-title {
+        font-size: 24px;
+
+        margin-bottom: 35px;
+    }
+
+
+    /* ORGANISASI */
+
+    .person-card {
+        width: 180px;
+    }
+
+    .org-middle {
+        justify-content: space-around;
+    }
+
+    .org-bottom {
+        justify-content: space-around;
+    }
+
+
+    /* FOOTER */
+
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 25px;
+
+        padding: 30px;
+    }
+
+    .footer-description,
+    .footer-contact,
+    .footer-address {
+        border-left: none;
+
+        padding: 0;
+    }
+}
+
+
+/* ========================================
+   RESPONSIVE 550
+======================================== */
+
+@media (max-width: 550px) {
+
+    .navbar {
+        padding: 0 18px;
+    }
+
+    .logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    .brand-name strong {
+        font-size: 15px;
+    }
+
+    .brand-name span {
+        font-size: 9px;
+    }
+
+
+    /* CONTENT */
+
+    .content {
+        padding: 20px 20px 35px;
+
+        min-height: auto;
+    }
+
+    .page-title {
+        font-size: 23px;
+
+        margin-bottom: 30px;
+    }
+
+
+    /* ORGANISASI MOBILE */
+
+    .line-top {
+        height: 35px;
+    }
+
+    .org-middle {
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 45px;
+    }
+
+    .org-middle::before {
+        display: none;
+    }
+
+    .org-middle .person-card::before {
+        height: 45px;
+
+        top: -45px;
+    }
+
+    .org-bottom {
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 45px;
+
+        margin-top: 45px;
+    }
+
+    .org-bottom .person-card::before {
+        height: 45px;
+
+        top: -45px;
+    }
+
+
+    /* CARD */
+
+    .person-card {
+        width: 196px;
+
+        height: 65px;
+    }
+
+
+    /* FOOTER */
+
+    .footer-content {
+        grid-template-columns: 1fr;
+
+        padding: 30px 20px;
+
+        text-align: center;
+    }
+
+    .footer-brand {
+        justify-content: center;
+
+        padding: 0;
+    }
+
+    .footer-description,
+    .footer-contact,
+    .footer-address {
+        text-align: center;
+    }
+
+    .footer-contact small {
+        margin-left: 0;
+    }
+
+    .copyright {
+        justify-content: center;
+
+        text-align: center;
+
+        padding: 12px 15px;
+
+        font-size: 11px;
+    }
+}
+
+
+/* ========================================
+   RESPONSIVE 430
+======================================== */
+
+@media (max-width: 430px) {
+
+    .navbar {
+        padding: 0 12px;
+    }
+
+    .brand {
+        gap: 8px;
+    }
+
+    .logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    .brand-name strong {
+        font-size: 14px;
+    }
+
+    .brand-name span {
+        font-size: 8px;
+    }
+
+    .menu-toggle {
+        font-size: 23px;
+    }
+
+    .content {
+        padding: 20px 15px 30px;
+    }
+
+    .page-title {
+        font-size: 22px;
+
+        margin-bottom: 25px;
+    }
+
+    .person-card {
+        width: 196px;
+    }
+
+    .empty-organigram {
+        min-height: 220px;
+    }
+
+    .empty-organigram i {
+        font-size: 38px;
+    }
+
+    .empty-organigram h3 {
+        font-size: 16px;
+    }
+
+    .empty-organigram p {
+        font-size: 12px;
+    }
+
+    .footer-content {
+        padding: 30px 20px;
+    }
+}

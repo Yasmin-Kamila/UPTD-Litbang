@@ -1,0 +1,947 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7ecdc;
+    color: #171717;
+}
+
+.dashboard {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+}
+
+
+/* ==========================================
+   SIDEBAR
+========================================== */
+
+.sidebar {
+    width: 262px;
+    min-height: 100vh;
+    background: #673d1c;
+    color: white;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 20px;
+    overflow: hidden;
+    transition:
+        width 0.3s ease,
+        padding 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+/* ==========================================
+   BRAND / LOGO
+========================================== */
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 220px;
+}
+
+.brand-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #f8f7f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.brand-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 5px;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.25;
+    white-space: nowrap;
+}
+
+.brand-text strong {
+    font-size: 13px;
+}
+
+.brand-text span {
+    font-size: 10px;
+    margin-top: 2px;
+}
+
+
+/* ==========================================
+   GARIS SIDEBAR
+========================================== */
+
+.sidebar-line {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.45);
+    margin: 28px 6px 17px;
+}
+
+
+/* ==========================================
+   MENU TITLE
+========================================== */
+
+.menu-title {
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 14px;
+    white-space: nowrap;
+}
+
+
+/* ==========================================
+   MENU
+========================================== */
+
+.menu {
+    width: 100%;
+}
+
+.menu-item {
+    width: 100%;
+    height: 42px;
+    margin-bottom: 10px;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-radius: 6px;
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    white-space: nowrap;
+    transition: background 0.2s ease;
+}
+
+.menu-item i {
+    width: 17px;
+    text-align: center;
+    font-size: 13px;
+    flex-shrink: 0;
+}
+
+.menu-item:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.menu-item.active {
+    background: #bd8b52;
+}
+
+
+/* ==========================================
+   LOGOUT
+========================================== */
+
+.logout {
+    margin-top: auto;
+    padding-top: 15px;
+}
+
+.logout form {
+    width: 100%;
+    margin: 0;
+}
+
+.logout button {
+    border: none;
+    font-family: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+
+.logout button {
+    width: 100%;
+    height: 44px;
+    padding: 0 14px;
+    border-radius: 6px;
+    background: #bd8b52;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+.logout button:hover {
+    background: #c99a63;
+}
+
+
+/* ==========================================
+   SIDEBAR COLLAPSE DESKTOP
+========================================== */
+
+.sidebar.hide {
+    width: 78px;
+    padding-left: 11px;
+    padding-right: 11px;
+}
+
+.sidebar.hide .brand-text,
+.sidebar.hide .menu-title,
+.sidebar.hide .menu-item span,
+.sidebar.hide .logout span {
+    display: none;
+}
+
+.sidebar.hide .brand {
+    justify-content: center;
+    min-width: 56px;
+}
+
+.sidebar.hide .sidebar-line {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.sidebar.hide .menu-item {
+    justify-content: center;
+    padding-left: 0;
+    padding-right: 0;
+    gap: 0;
+}
+
+.sidebar.hide .logout button {
+    justify-content: center;
+    padding-left: 0;
+    padding-right: 0;
+    gap: 0;
+}
+
+
+/* ==========================================
+   MAIN
+========================================== */
+
+.main {
+    flex: 1;
+    min-width: 0;
+}
+
+
+/* ==========================================
+   TOPBAR
+========================================== */
+
+.topbar {
+    width: 100%;
+    height: 85px;
+    background: #faf9f6;
+    border-top: 1px solid #d7d0c8;
+    border-bottom: 1px solid #ded6cd;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 42px;
+}
+
+.topbar-left {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.topbar-left h1 {
+    font-size: 29px;
+    font-weight: 700;
+}
+
+
+/* ==========================================
+   TOGGLE BUTTON
+========================================== */
+
+.toggle-btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: transparent;
+    color: #603b1d;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+}
+
+.toggle-btn:hover {
+    background: #eee3d5;
+}
+
+
+/* ==========================================
+   ADMIN
+========================================== */
+
+.admin {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.admin-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: #eee4ff;
+    color: #7048a8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 21px;
+}
+
+.admin-text strong {
+    display: block;
+    font-size: 13px;
+}
+
+.admin-text span {
+    display: block;
+    font-size: 11px;
+    margin-top: 4px;
+}
+
+
+/* ==========================================
+   CONTENT
+========================================== */
+
+.content {
+    width: 100%;
+    padding: 0 22px 35px;
+}
+
+
+/* ==========================================
+   PAGE HEADING
+========================================== */
+
+.page-heading {
+    width: 100%;
+    padding: 28px 0 20px;
+}
+
+.page-heading h2 {
+    font-size: 26px;
+    margin-bottom: 8px;
+}
+
+.page-heading p {
+    font-size: 14px;
+}
+
+
+/* ==========================================
+   ALERT
+========================================== */
+
+.alert-success {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 12px 15px;
+    border-radius: 6px;
+    background: #dff5e5;
+    color: #236b38;
+    font-size: 13px;
+}
+
+.alert-error {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 12px 15px;
+    border-radius: 6px;
+    background: #f8dede;
+    color: #9b2525;
+    font-size: 13px;
+}
+
+.alert-error ul {
+    margin-left: 18px;
+}
+
+
+/* ==========================================
+   PROFILE GRID
+========================================== */
+
+.profile-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 340px minmax(0, 1fr);
+    gap: 15px;
+}
+
+.profile-card {
+    background: #ffffff;
+    padding: 20px;
+    min-width: 0;
+}
+
+.profile-card h3 {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+
+/* ==========================================
+   FORM
+========================================== */
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.form-group input {
+    width: 100%;
+    height: 39px;
+    border: none;
+    outline: none;
+    background: #dddddd;
+    padding: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+}
+
+
+/* ==========================================
+   IMAGE
+========================================== */
+
+.image-preview {
+    width: 100%;
+    height: 190px;
+    background: #dddddd;
+    overflow: hidden;
+}
+
+.image-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 100%;
+    background: #dddddd;
+}
+
+
+/* ==========================================
+   UPLOAD BUTTON
+========================================== */
+
+.upload-btn {
+    width: 100%;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    border: none;
+    background: #dddddd;
+    color: #333333;
+    cursor: pointer;
+    font-size: 13px;
+    border-radius: 0;
+    transition: background 0.2s ease;
+}
+
+.upload-btn:hover {
+    background: #cfcfcf;
+}
+
+
+/* ==========================================
+   EDITOR DESKRIPSI
+========================================== */
+
+.editor {
+    width: 100%;
+    border: 1px solid #d8d8d8;
+    background: #ffffff;
+}
+
+.editor-toolbar {
+    width: 100%;
+    min-height: 35px;
+    background: #f1f1f1;
+    display: flex;
+    align-items: center;
+    padding: 5px 7px;
+    gap: 4px;
+    flex-wrap: wrap;
+}
+
+.editor-toolbar select {
+    height: 26px;
+    border: none;
+    background: transparent;
+    font-size: 11px;
+    outline: none;
+    cursor: pointer;
+    padding: 0 3px;
+}
+
+.editor-toolbar button {
+    width: 22px;
+    height: 25px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    border-radius: 3px;
+}
+
+.editor-toolbar button:hover {
+    background: #d7d7d7;
+}
+
+.editor-toolbar button:active {
+    background: #c8c8c8;
+}
+
+.editor-content {
+    width: 100%;
+    min-height: 122px;
+    padding: 13px;
+    background: #dddddd;
+    font-size: 13px;
+    line-height: 1.6;
+    outline: none;
+    cursor: text;
+    overflow-wrap: break-word;
+}
+
+.editor-content:focus {
+    outline: 2px solid #bd8b52;
+    outline-offset: -2px;
+}
+
+
+/* ==========================================
+   EDITOR HEADING
+========================================== */
+
+.editor-content h1 {
+    font-size: 25px;
+    margin: 8px 0;
+}
+
+.editor-content h2 {
+    font-size: 21px;
+    margin: 7px 0;
+}
+
+.editor-content h3 {
+    font-size: 18px;
+    margin: 6px 0;
+}
+
+.editor-content p {
+    margin: 0 0 8px;
+}
+
+
+/* ==========================================
+   SEJARAH
+========================================== */
+
+.description-card .sejarah {
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+.description-card .sejarah textarea {
+    width: 100%;
+    min-height: 80px;
+    background: #dddddd;
+    border: none;
+    outline: none;
+    padding: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    line-height: 1.5;
+    resize: vertical;
+}
+
+
+/* ==========================================
+   VISI MISI
+========================================== */
+
+.visi-misi-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 340px minmax(0, 1fr);
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.visi-card textarea,
+.misi-card textarea {
+    width: 100%;
+    min-height: 165px;
+    background: #dddddd;
+    border: none;
+    outline: none;
+    padding: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    line-height: 1.7;
+    resize: vertical;
+}
+
+
+/* ==========================================
+   SIMPAN
+========================================== */
+
+.save-area {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.save-btn {
+    border: none;
+    background: #673d1c;
+    color: white;
+    padding: 12px 22px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.save-btn:hover {
+    background: #7b4a23;
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media screen and (max-width: 1100px) {
+
+    .profile-grid,
+    .visi-misi-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .content {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .topbar {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media screen and (max-width: 700px) {
+
+    /* SIDEBAR */
+
+    .sidebar {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 260px !important;
+        max-width: 260px !important;
+        height: 100vh !important;
+        min-height: 100vh !important;
+        padding: 24px 20px !important;
+        z-index: 9998 !important;
+        transform: translateX(-100%) !important;
+        transition: transform 0.3s ease !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+    }
+
+    .sidebar.mobile-open {
+        width: 260px !important;
+        max-width: 260px !important;
+        transform: translateX(0) !important;
+    }
+
+
+    /* TOGGLE */
+
+    .toggle-btn {
+        position: fixed !important;
+        top: 17px !important;
+        left: 18px !important;
+        width: 42px !important;
+        height: 42px !important;
+        z-index: 10001 !important;
+        background: #faf9f6 !important;
+        color: #603b1d !important;
+        border: none !important;
+        border-radius: 6px !important;
+        cursor: pointer !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+        transition: left 0.3s ease !important;
+    }
+
+    .toggle-btn.mobile-toggle-open {
+        left: 275px !important;
+        z-index: 10002 !important;
+        background: #faf9f6 !important;
+        color: #603b1d !important;
+    }
+
+
+    /* SIDEBAR SAAT TERBUKA */
+
+    .sidebar.mobile-open .brand-text {
+        display: flex !important;
+    }
+
+    .sidebar.mobile-open .menu-title {
+        display: block !important;
+    }
+
+    .sidebar.mobile-open .menu-item span {
+        display: inline !important;
+    }
+
+    .sidebar.mobile-open .logout span {
+        display: inline !important;
+    }
+
+    .sidebar.mobile-open .brand {
+        justify-content: flex-start !important;
+        min-width: 220px !important;
+    }
+
+    .sidebar.mobile-open .menu-item {
+        justify-content: flex-start !important;
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+        gap: 15px !important;
+    }
+
+    .sidebar.mobile-open .logout button {
+        justify-content: flex-start !important;
+        padding-left: 14px !important;
+        padding-right: 14px !important;
+        gap: 14px !important;
+    }
+
+
+    /* MAIN */
+
+    .main {
+        width: 100%;
+        min-width: 0;
+    }
+
+
+    /* TOPBAR */
+
+    .topbar {
+        width: 100%;
+        height: 75px;
+        padding: 0 18px;
+    }
+
+    .topbar-left {
+        gap: 10px;
+        padding-left: 55px;
+    }
+
+    .topbar-left h1 {
+        font-size: 23px;
+    }
+
+    .admin {
+        display: none;
+    }
+
+
+    /* CONTENT */
+
+    .content {
+        width: 100%;
+        padding: 0 12px 25px;
+    }
+
+
+    /* HEADING */
+
+    .page-heading {
+        padding: 25px 8px 18px;
+    }
+
+    .page-heading h2 {
+        font-size: 23px;
+        margin-bottom: 7px;
+    }
+
+    .page-heading p {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+
+    /* PROFILE */
+
+    .profile-grid {
+        width: 100%;
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .profile-card {
+        width: 100%;
+        padding: 18px;
+    }
+
+
+    /* IMAGE */
+
+    .image-preview {
+        width: 100%;
+        height: 220px;
+    }
+
+
+    /* EDITOR */
+
+    .editor {
+        width: 100%;
+    }
+
+    .editor-toolbar {
+        gap: 2px;
+        padding: 5px;
+        min-height: 40px;
+    }
+
+    .editor-toolbar select {
+        max-width: 95px;
+    }
+
+    .editor-content {
+        min-height: 150px;
+        font-size: 13px;
+    }
+
+
+    /* SEJARAH */
+
+    .description-card .sejarah {
+        margin-top: 18px;
+    }
+
+
+    /* VISI MISI */
+
+    .visi-misi-grid {
+        width: 100%;
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-top: 12px;
+    }
+
+    .visi-card textarea,
+    .misi-card textarea {
+        min-height: 180px;
+    }
+
+
+    /* SIMPAN */
+
+    .save-area {
+        justify-content: stretch;
+        width: 100%;
+    }
+
+    .save-btn {
+        width: 100%;
+    }
+
+
+    /* ALERT */
+
+    .alert-success,
+    .alert-error {
+        font-size: 12px;
+    }
+}
+
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media screen and (max-width: 430px) {
+
+    .topbar-left h1 {
+        font-size: 21px;
+    }
+
+    .page-heading h2 {
+        font-size: 21px;
+    }
+
+    .profile-card h3 {
+        font-size: 15px;
+    }
+
+    .image-preview {
+        height: 190px;
+    }
+
+    .editor-toolbar button {
+        width: 21px;
+    }
+
+    .editor-toolbar select {
+        max-width: 90px;
+        font-size: 10px;
+    }
+}

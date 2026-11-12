@@ -1,0 +1,1160 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7ecdc;
+    color: #171717;
+}
+
+.dashboard {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+}
+
+/* ==========================================
+   SIDEBAR
+========================================== */
+
+.sidebar {
+    width: 262px;
+    min-height: 100vh;
+    background: #673d1c;
+    color: white;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 20px;
+    overflow: hidden;
+    transition:
+        width 0.3s ease,
+        padding 0.3s ease,
+        transform 0.3s ease;
+}
+
+/* ==========================================
+   BRAND
+========================================== */
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 220px;
+}
+
+.brand-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #f8f7f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.brand-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 5px;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.25;
+    white-space: nowrap;
+}
+
+.brand-text strong {
+    font-size: 13px;
+}
+
+.brand-text span {
+    font-size: 10px;
+    margin-top: 2px;
+}
+
+/* ==========================================
+   GARIS
+========================================== */
+
+.sidebar-line {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.45);
+    margin: 28px 6px 17px;
+}
+
+/* ==========================================
+   MENU TITLE
+========================================== */
+
+.menu-title {
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 14px;
+    white-space: nowrap;
+}
+
+/* ==========================================
+   MENU
+========================================== */
+
+.menu {
+    width: 100%;
+}
+
+.menu-item {
+    width: 100%;
+    height: 42px;
+    margin-bottom: 10px;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-radius: 6px;
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    white-space: nowrap;
+    transition: background 0.2s ease;
+}
+
+.menu-item i {
+    width: 17px;
+    text-align: center;
+    font-size: 13px;
+    flex-shrink: 0;
+}
+
+.menu-item:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.menu-item.active {
+    background: #bd8b52;
+    color: white;
+}
+
+/* ==========================================
+   LOGOUT
+========================================== */
+
+.logout {
+    width: 100%;
+    margin-top: auto;
+    padding-top: 15px;
+}
+
+.logout form {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.logout button {
+    width: 100%;
+    height: 44px;
+    padding: 0 14px;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    background: #bd8b52;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    font-weight: normal;
+    text-align: left;
+    white-space: nowrap;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.logout button i {
+    width: 17px;
+    min-width: 17px;
+    text-align: center;
+    font-size: 13px;
+}
+
+.logout button:hover {
+    background: #c99a63;
+}
+
+/* ==========================================
+   SIDEBAR COLLAPSE
+========================================== */
+
+.sidebar.hide {
+    width: 78px;
+    padding-left: 11px;
+    padding-right: 11px;
+}
+
+.sidebar.hide .brand-text,
+.sidebar.hide .menu-title,
+.sidebar.hide .menu-item span,
+.sidebar.hide .logout span {
+    display: none;
+}
+
+.sidebar.hide .brand {
+    justify-content: center;
+    min-width: 56px;
+}
+
+.sidebar.hide .sidebar-line {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.sidebar.hide .menu-item {
+    justify-content: center;
+    padding-left: 0;
+    padding-right: 0;
+    gap: 0;
+}
+
+.sidebar.hide .logout button {
+    justify-content: center;
+    padding-left: 0;
+    padding-right: 0;
+    gap: 0;
+}
+
+/* ==========================================
+   MAIN
+========================================== */
+
+.main {
+    flex: 1;
+    min-width: 0;
+    min-height: 100vh;
+}
+
+/* ==========================================
+   TOPBAR
+========================================== */
+
+.topbar {
+    width: 100%;
+    height: 85px;
+    background: #faf9f6;
+    border-top: 1px solid #d7d0c8;
+    border-bottom: 1px solid #ded6cd;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 42px;
+}
+
+.topbar-left {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.topbar-left h1 {
+    font-size: 29px;
+    font-weight: 700;
+}
+
+/* ==========================================
+   TOGGLE
+========================================== */
+
+.toggle-btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: transparent;
+    color: #603b1d;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+}
+
+.toggle-btn:hover {
+    background: #eee3d5;
+}
+
+/* ==========================================
+   ADMIN
+========================================== */
+
+.admin {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.admin-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: #eee4ff;
+    color: #7048a8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 21px;
+}
+
+.admin-text strong {
+    display: block;
+    font-size: 13px;
+}
+
+.admin-text span {
+    display: block;
+    font-size: 11px;
+    margin-top: 4px;
+}
+
+/* ==========================================
+   CONTENT
+========================================== */
+
+.content {
+    width: 100%;
+    min-height: calc(100vh - 85px);
+    padding-bottom: 30px;
+}
+
+/* ==========================================
+   NOTIFIKASI
+========================================== */
+
+.alert-success {
+    width: 100%;
+    min-height: 48px;
+    padding: 12px 18px;
+    background: #e8f5e9;
+    color: #2e7d32;
+    border-bottom: 1px solid #c8e6c9;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+}
+
+.alert-success i {
+    font-size: 16px;
+    color: #388e3c;
+    flex-shrink: 0;
+}
+
+.alert-success span {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* ==========================================
+   HEADING
+========================================== */
+
+.gallery-heading {
+    width: 100%;
+    min-height: 105px;
+    background: #f4e9d8;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 18px 0 16px;
+    gap: 20px;
+}
+
+.gallery-heading h2 {
+    font-size: 25px;
+    margin-bottom: 6px;
+}
+
+.gallery-heading p {
+    font-size: 11px;
+}
+
+/* ==========================================
+   TAMBAH GALERI
+========================================== */
+
+.add-btn {
+    height: 42px;
+    padding: 0 18px;
+    border: none;
+    border-radius: 6px;
+    background: #bd8b52;
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-shrink: 0;
+    white-space: nowrap;
+    transition: background 0.2s ease;
+}
+
+.add-btn:hover {
+    background: #a97643;
+}
+
+/* ==========================================
+   FILTER
+========================================== */
+
+.filter-area {
+    width: 100%;
+    min-height: 62px;
+    background: white;
+    padding: 10px 14px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.search-box {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.search-box label {
+    font-size: 11px;
+}
+
+.search-input {
+    width: 200px;
+    height: 31px;
+    background: #eee8f2;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.search-input input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 10px;
+}
+
+.search-input i {
+    font-size: 12px;
+}
+
+.reset-btn {
+    height: 30px;
+    padding: 0 12px;
+    border: none;
+    border-radius: 6px;
+    background: #e1dce5;
+    color: #333;
+    font-size: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.reset-btn:hover {
+    background: #d4ced8;
+}
+
+/* ==========================================
+   GALLERY GRID
+   3 GAMBAR PER BARIS
+========================================== */
+
+.gallery-grid {
+    width: 100%;
+    padding: 14px 32px 25px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px 28px;
+    background: #f7ecdc;
+}
+
+/* ==========================================
+   GALLERY CARD
+========================================== */
+
+.gallery-card {
+    width: 100%;
+    max-width: 320px;
+    justify-self: center;
+    background: #bd8b52;
+    border-radius: 9px;
+    padding: 7px;
+    overflow: hidden;
+}
+
+/* ==========================================
+   IMAGE
+========================================== */
+
+.gallery-image {
+    width: 100%;
+    height: 130px;
+    background: #d9d9d9;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.gallery-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ==========================================
+   INFO
+========================================== */
+
+.gallery-info {
+    min-height: 52px;
+    padding: 6px 2px 1px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.gallery-text {
+    min-width: 0;
+}
+
+.gallery-text h3 {
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.gallery-text p {
+    font-size: 8px;
+    margin-top: 4px;
+    white-space: nowrap;
+}
+
+.gallery-text p i {
+    margin-right: 3px;
+}
+
+/* ==========================================
+   CARD ACTIONS
+========================================== */
+
+.card-actions {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    flex-shrink: 0;
+}
+
+.card-actions button {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 10px;
+}
+
+.edit-icon,
+.delete-icon {
+    background: white;
+    color: #1c1c1c;
+}
+
+.edit-icon:hover,
+.delete-icon:hover {
+    background: #eeeeee;
+}
+
+/* ==========================================
+   MODAL
+========================================== */
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    padding: 15px;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-box {
+    width: 455px;
+    max-width: 100%;
+    background: #ffffff;
+    border-radius: 7px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* ==========================================
+   MODAL HEADER
+========================================== */
+
+.modal-header {
+    height: 83px;
+    padding: 0 34px;
+    background: #a36b36;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.modal-header h2 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.close-modal {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: transparent;
+    color: #ffffff;
+    font-size: 34px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-modal:hover {
+    opacity: 0.8;
+}
+
+/* ==========================================
+   MODAL FORM
+========================================== */
+
+.form-body {
+    padding: 50px 34px 10px;
+}
+
+.form-group {
+    margin-bottom: 28px;
+}
+
+.form-group > label {
+    display: block;
+    margin-bottom: 17px;
+    color: #30261f;
+    font-size: 29px;
+    font-weight: 400;
+}
+
+/* ==========================================
+   TEXT & DATE
+========================================== */
+
+.form-group input[type="text"],
+.form-group input[type="date"] {
+    width: 100%;
+    height: 61px;
+    padding: 0 16px;
+    border: 3px solid #dedee5;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #30261f;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    outline: none;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="date"]:focus {
+    border-color: #a36b36;
+}
+
+/* ==========================================
+   FILE INPUT
+========================================== */
+
+.file-input-wrapper {
+    width: 100%;
+    height: 61px;
+    border: 3px solid #dedee5;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    padding: 0 18px;
+    position: relative;
+    overflow: hidden;
+}
+
+.file-input-wrapper input[type="file"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+
+.file-button {
+    display: inline-flex !important;
+    width: auto !important;
+    height: 39px;
+    margin: 0 !important;
+    padding: 0 20px;
+    border: 1px solid #77717f;
+    background: #ffffff;
+    color: #4d4657 !important;
+    font-size: 18px !important;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.file-button:hover {
+    background: #f1f1f1;
+}
+
+#namaFile {
+    margin-left: 15px;
+    color: #777;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ==========================================
+   MODAL FOOTER
+========================================== */
+
+.modal-footer {
+    padding: 24px 34px 47px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cancel-btn {
+    height: 48px;
+    padding: 0 22px;
+    border: 1px solid #77717f;
+    border-radius: 0;
+    background: #f7f7f7;
+    color: #4d4657;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.cancel-btn:hover {
+    background: #eeeeee;
+}
+
+.save-btn {
+    height: 48px;
+    padding: 0 22px;
+    border: 1px solid #8e5b2d;
+    border-radius: 0;
+    background: #a36b36;
+    color: #ffffff;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.save-btn:hover {
+    background: #8e5b2d;
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media screen and (max-width: 1000px) {
+
+    .topbar {
+        padding: 0 25px;
+    }
+
+    .gallery-heading {
+        padding-left: 35px;
+        padding-right: 35px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px 25px;
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .gallery-card {
+        max-width: 300px;
+    }
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media screen and (max-width: 700px) {
+
+    .dashboard {
+        position: relative;
+        display: block;
+    }
+
+    /* SIDEBAR */
+
+    .sidebar {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 260px !important;
+        max-width: 260px !important;
+        height: 100vh !important;
+        min-height: 100vh !important;
+        padding: 24px 20px !important;
+        z-index: 9998 !important;
+        transform: translateX(-100%) !important;
+        transition: transform 0.3s ease !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+    }
+
+    .sidebar.mobile-open {
+        width: 260px !important;
+        max-width: 260px !important;
+        transform: translateX(0) !important;
+    }
+
+    /* TOGGLE */
+
+    .toggle-btn {
+        position: fixed !important;
+        top: 17px !important;
+        left: 18px !important;
+        width: 42px !important;
+        height: 42px !important;
+        z-index: 10001 !important;
+        background: #faf9f6 !important;
+        color: #603b1d !important;
+        border: none !important;
+        border-radius: 6px !important;
+        cursor: pointer !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+        transition: left 0.3s ease !important;
+    }
+
+    .toggle-btn:hover {
+        background: #faf9f6 !important;
+    }
+
+    .toggle-btn.mobile-toggle-open {
+        left: 275px !important;
+        z-index: 10002 !important;
+        background: #faf9f6 !important;
+        color: #603b1d !important;
+    }
+
+    /* SIDEBAR OPEN */
+
+    .sidebar.mobile-open .brand-text {
+        display: flex !important;
+    }
+
+    .sidebar.mobile-open .menu-title {
+        display: block !important;
+    }
+
+    .sidebar.mobile-open .menu-item span {
+        display: inline !important;
+    }
+
+    .sidebar.mobile-open .logout span {
+        display: inline !important;
+    }
+
+    .sidebar.mobile-open .brand {
+        justify-content: flex-start !important;
+        min-width: 220px !important;
+    }
+
+    .sidebar.mobile-open .menu-item {
+        justify-content: flex-start !important;
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+        gap: 15px !important;
+    }
+
+    .sidebar.mobile-open .logout button {
+        justify-content: flex-start !important;
+        padding-left: 14px !important;
+        padding-right: 14px !important;
+        gap: 14px !important;
+    }
+
+    /* MAIN */
+
+    .main {
+        width: 100%;
+        min-width: 0;
+    }
+
+    /* TOPBAR */
+
+    .topbar {
+        width: 100%;
+        height: 75px;
+        padding: 0 18px;
+    }
+
+    .topbar-left {
+        gap: 10px;
+        padding-left: 55px;
+    }
+
+    .topbar-left h1 {
+        font-size: 23px;
+    }
+
+    .admin {
+        display: none;
+    }
+
+    /* HEADING */
+
+    .gallery-heading {
+        min-height: 105px;
+        padding: 18px 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 15px;
+    }
+
+    .gallery-heading h2 {
+        font-size: 21px;
+        margin-bottom: 5px;
+    }
+
+    .gallery-heading p {
+        font-size: 9px;
+        line-height: 1.4;
+    }
+
+    .add-btn {
+        position: static;
+        height: 38px;
+        padding: 0 14px;
+        font-size: 11px;
+        flex-shrink: 0;
+        white-space: nowrap;
+        transform: none;
+    }
+
+    /* FILTER */
+
+    .filter-area {
+        padding: 10px 12px;
+    }
+
+    .search-input {
+        width: 170px;
+    }
+
+    /* GALLERY */
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 15px 20px 25px;
+    }
+
+    .gallery-card {
+        width: 100%;
+        max-width: 360px;
+        margin: 0 auto;
+    }
+
+    .gallery-image {
+        height: 170px;
+    }
+
+    /* MODAL MOBILE */
+
+    .modal {
+        padding: 10px;
+    }
+
+    .modal-box {
+        width: 455px;
+        max-width: 100%;
+    }
+
+    .modal-header {
+        height: 65px;
+        padding: 0 20px;
+    }
+
+    .modal-header h2 {
+        font-size: 25px;
+    }
+
+    .close-modal {
+        font-size: 29px;
+    }
+
+    .form-body {
+        padding: 30px 20px 5px;
+    }
+
+    .form-group {
+        margin-bottom: 22px;
+    }
+
+    .form-group > label {
+        margin-bottom: 10px;
+        font-size: 22px;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="date"],
+    .file-input-wrapper {
+        height: 52px;
+    }
+
+    .file-button {
+        height: 34px;
+        padding: 0 15px;
+        font-size: 15px !important;
+    }
+
+    #namaFile {
+        font-size: 12px;
+    }
+
+    .modal-footer {
+        padding: 18px 20px 28px;
+    }
+
+    .cancel-btn,
+    .save-btn {
+        height: 42px;
+        padding: 0 17px;
+        font-size: 15px;
+    }
+}
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media screen and (max-width: 430px) {
+
+    .topbar {
+        height: 70px;
+    }
+
+    .topbar-left {
+        padding-left: 52px;
+    }
+
+    .topbar-left h1 {
+        font-size: 21px;
+    }
+
+    .gallery-heading {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .gallery-heading h2 {
+        font-size: 19px;
+    }
+
+    .gallery-heading p {
+        font-size: 8px;
+    }
+
+    .add-btn {
+        height: 36px;
+        padding: 0 10px;
+        font-size: 9px;
+    }
+
+    .search-input {
+        width: 145px;
+    }
+
+    .gallery-grid {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    /* MODAL */
+
+    .modal-header h2 {
+        font-size: 21px;
+    }
+
+    .form-body {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .form-group > label {
+        font-size: 19px;
+    }
+
+    .modal-footer {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .cancel-btn,
+    .save-btn {
+        padding: 0 13px;
+        font-size: 14px;
+    }
+}

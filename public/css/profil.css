@@ -1,0 +1,803 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family: "Times New Roman", serif;
+    background: #eee4d8;
+    color: #3b2a20;
+}
+
+.website {
+    width: 100%;
+    min-height: 100vh;
+}
+
+
+/* ========================================
+   CONTENT
+======================================== */
+
+.content {
+    width: 100%;
+
+    padding: 25px 35px 40px;
+
+    min-height: calc(100vh - 175px);
+
+    background: #fffaf5;
+}
+
+
+/* ========================================
+   PROFIL ATAS
+======================================== */
+
+.profile-top {
+    display: grid;
+
+    grid-template-columns: 53% 47%;
+
+    gap: 25px;
+
+    align-items: start;
+}
+
+
+/* ========================================
+   TEKS PROFIL
+======================================== */
+
+.profile-text h1 {
+    font-size: 26px;
+
+    line-height: 32px;
+
+    margin-bottom: 4px;
+}
+
+.profile-text h2 {
+    font-size: 20px;
+
+    line-height: 25px;
+
+    margin-bottom: 12px;
+}
+
+.profile-text > p {
+    font-size: 16px;
+
+    line-height: 19px;
+
+    max-width: 650px;
+}
+
+
+/* ========================================
+   FOTO
+======================================== */
+
+.profile-image {
+    width: 100%;
+
+    height: 270px;
+
+    overflow: hidden;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* ========================================
+   SEJARAH
+======================================== */
+
+.history {
+    margin-top: 30px;
+}
+
+.history h2 {
+    font-size: 20px;
+
+    margin-bottom: 7px;
+}
+
+.history-line {
+    width: 125px;
+
+    border-top: 1px solid #9a8373;
+
+    margin-bottom: 8px;
+}
+
+.history p {
+    font-size: 16px;
+
+    line-height: 16px;
+
+    color: #4b3a30;
+}
+
+
+/* ========================================
+   VISI & MISI
+======================================== */
+
+.vision-mission {
+    margin-top: 50px;
+}
+
+.vision-mission > h2 {
+    text-align: center;
+
+    font-size: 20px;
+
+    line-height: 25px;
+
+    margin-bottom: 6px;
+}
+
+.title-line {
+    width: 340px;
+
+    border-top: 1px solid #9a8373;
+
+    margin: 0 auto 13px;
+}
+
+
+/* ========================================
+   VISI MISI CONTENT
+======================================== */
+
+.vision-mission-content {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    column-gap: 70px;
+}
+
+
+/* ========================================
+   VISI
+======================================== */
+
+.vision h3,
+.mission h3 {
+    font-size: 18px;
+
+    margin-bottom: 7px;
+}
+
+.vision h3 {
+    text-align: center;
+}
+
+.vision p {
+    font-size: 16px;
+
+    line-height: 18px;
+}
+
+
+/* ========================================
+   MISI
+======================================== */
+
+.mission h3 {
+    text-align: center;
+}
+
+.mission ol {
+    padding-left: 22px;
+
+    font-size: 16px;
+
+    line-height: 19px;
+}
+
+
+/* ========================================
+   FOOTER
+   SAMA SEPERTI BERANDA
+======================================== */
+
+.footer {
+    width: 100%;
+}
+
+.footer-content {
+    width: 100%;
+
+    min-height: 104px;
+
+    background: #5a301b;
+
+    color: white;
+
+    display: grid;
+
+    grid-template-columns: 1.15fr 1.3fr 1fr 1.4fr;
+
+    align-items: center;
+
+    padding: 15px 2%;
+}
+
+
+/* ========================================
+   FOOTER BRAND
+======================================== */
+
+.footer-brand {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding-right: 20px;
+}
+
+.footer-logo {
+    width: 43px;
+    height: 43px;
+
+    border-radius: 50%;
+
+    background: #eeeeee;
+
+    overflow: hidden;
+
+    flex-shrink: 0;
+}
+
+.footer-logo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+.footer-brand h3 {
+    font-size: 20px;
+
+    line-height: 1;
+}
+
+.footer-brand span {
+    font-size: 11px;
+}
+
+
+/* ========================================
+   FOOTER DESCRIPTION
+======================================== */
+
+.footer-description {
+    text-align: center;
+
+    border-left: 1px solid rgba(255,255,255,0.5);
+
+    padding: 0 20px;
+}
+
+.footer-description p {
+    font-size: 13px;
+
+    line-height: 1.35;
+
+    margin-bottom: 8px;
+}
+
+
+/* ========================================
+   SOCIAL
+======================================== */
+
+.footer-social {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 18px;
+
+    margin-top: 7px;
+}
+
+.footer-social a {
+    color: #ffffff;
+
+    font-size: 18px;
+
+    text-decoration: none;
+}
+
+
+/* ========================================
+   CONTACT
+======================================== */
+
+.footer-contact {
+    border-left: 1px solid rgba(255,255,255,0.5);
+
+    padding: 0 20px;
+}
+
+.footer-contact p {
+    font-size: 11px;
+
+    margin-bottom: 7px;
+}
+
+.footer-contact i {
+    width: 17px;
+}
+
+.footer-contact small {
+    display: block;
+
+    margin-left: 22px;
+
+    font-size: 8px;
+}
+
+
+/* ========================================
+   ADDRESS
+======================================== */
+
+.footer-address {
+    border-left: 1px solid rgba(255,255,255,0.5);
+
+    padding-left: 20px;
+}
+
+.footer-address p {
+    font-size: 11px;
+
+    line-height: 1.45;
+
+    margin-bottom: 6px;
+}
+
+.footer-address i {
+    margin-right: 5px;
+}
+
+
+/* ========================================
+   COPYRIGHT
+======================================== */
+
+.copyright {
+    width: 100%;
+
+    min-height: 44px;
+
+    background: #f7ddba;
+
+    color: #21160f;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 0 2%;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+
+/* ========================================
+   LAPTOP
+======================================== */
+
+@media (max-width: 1100px) {
+
+    .navbar {
+        padding: 0 5%;
+    }
+
+    .menu {
+        gap: 20px;
+    }
+
+    .content {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .profile-top {
+        gap: 20px;
+    }
+
+    .profile-image {
+        height: 240px;
+    }
+
+    .vision-mission-content {
+        column-gap: 40px;
+    }
+
+    .footer-content {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .copyright {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 768px) {
+
+    /* NAVBAR */
+
+    .navbar {
+        height: 70px;
+
+        padding: 0 25px;
+
+        position: relative;
+    }
+
+    .menu {
+        display: none;
+
+        position: absolute;
+
+        top: 70px;
+        left: 0;
+
+        width: 100%;
+
+        background: #5a301b;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 0;
+
+        padding: 10px 25px 20px;
+
+        z-index: 100;
+    }
+
+    .menu.show {
+        display: flex;
+    }
+
+    .menu a {
+        width: 100%;
+
+        padding: 12px 0;
+
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+
+    /* CONTENT */
+
+    .content {
+        padding: 25px;
+    }
+
+    .profile-top {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 18px;
+    }
+
+    .profile-text h1 {
+        font-size: 23px;
+    }
+
+    .profile-text h2 {
+        font-size: 18px;
+    }
+
+    .profile-text > p {
+        font-size: 14px;
+
+        line-height: 17px;
+    }
+
+    .profile-image {
+        height: 210px;
+    }
+
+    .history h2 {
+        font-size: 18px;
+    }
+
+    .history p {
+        font-size: 14px;
+
+        line-height: 16px;
+    }
+
+    .vision-mission {
+        margin-top: 40px;
+    }
+
+    .vision-mission > h2 {
+        font-size: 19px;
+    }
+
+    .vision p,
+    .mission ol {
+        font-size: 14px;
+
+        line-height: 17px;
+    }
+
+
+    /* FOOTER */
+
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 25px;
+
+        padding: 30px;
+    }
+
+    .footer-description,
+    .footer-contact,
+    .footer-address {
+        border-left: none;
+
+        padding: 0;
+    }
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 550px) {
+
+    .navbar {
+        padding: 0 18px;
+    }
+
+    .logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    .brand-name strong {
+        font-size: 15px;
+    }
+
+    .brand-name span {
+        font-size: 9px;
+    }
+
+
+    /* CONTENT */
+
+    .content {
+        padding: 20px 20px 35px;
+
+        min-height: auto;
+    }
+
+    .profile-top {
+        grid-template-columns: 1fr;
+
+        gap: 22px;
+    }
+
+    .profile-image {
+        order: -1;
+
+        height: 230px;
+    }
+
+    .profile-text h1 {
+        font-size: 25px;
+    }
+
+    .profile-text h2 {
+        font-size: 19px;
+    }
+
+    .profile-text > p {
+        font-size: 13px;
+
+        line-height: 18px;
+
+        max-width: none;
+    }
+
+
+    /* SEJARAH */
+
+    .history {
+        margin-top: 28px;
+    }
+
+    .history h2 {
+        font-size: 19px;
+    }
+
+    .history p {
+        font-size: 13px;
+
+        line-height: 16px;
+    }
+
+
+    /* VISI MISI */
+
+    .vision-mission {
+        margin-top: 40px;
+    }
+
+    .vision-mission > h2 {
+        font-size: 20px;
+    }
+
+    .title-line {
+        width: 210px;
+    }
+
+    .vision-mission-content {
+        grid-template-columns: 1fr;
+
+        gap: 28px;
+    }
+
+    .vision h3,
+    .mission h3 {
+        font-size: 17px;
+    }
+
+    .vision p,
+    .mission ol {
+        font-size: 13px;
+
+        line-height: 17px;
+    }
+
+
+    /* FOOTER */
+
+    .footer-content {
+        grid-template-columns: 1fr;
+
+        padding: 30px 20px;
+
+        text-align: center;
+    }
+
+    .footer-brand {
+        justify-content: center;
+
+        padding: 0;
+    }
+
+    .footer-description,
+    .footer-contact,
+    .footer-address {
+        text-align: center;
+    }
+
+    .footer-contact small {
+        margin-left: 0;
+    }
+
+    .copyright {
+        justify-content: center;
+
+        text-align: center;
+
+        padding: 12px 15px;
+
+        font-size: 11px;
+    }
+}
+
+
+/* ========================================
+   HP KECIL
+======================================== */
+
+@media (max-width: 430px) {
+
+    .navbar {
+        padding: 0 12px;
+    }
+
+    .brand {
+        gap: 8px;
+    }
+
+    .logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    .brand-name strong {
+        font-size: 14px;
+    }
+
+    .brand-name span {
+        font-size: 8px;
+    }
+
+    .menu-toggle {
+        font-size: 23px;
+    }
+
+
+    /* CONTENT */
+
+    .content {
+        padding: 20px 15px 30px;
+    }
+
+    .profile-image {
+        height: 190px;
+    }
+
+    .profile-text h1 {
+        font-size: 23px;
+    }
+
+    .profile-text h2 {
+        font-size: 18px;
+    }
+
+    .profile-text > p {
+        font-size: 13px;
+        line-height: 17px;
+    }
+
+    .history p {
+        font-size: 12px;
+        line-height: 15px;
+    }
+
+    .vision p,
+    .mission ol {
+        font-size: 12px;
+        line-height: 16px;
+    }
+}

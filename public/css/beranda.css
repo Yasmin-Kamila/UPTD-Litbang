@@ -1,0 +1,1055 @@
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+} 
+ 
+html, 
+body { 
+    width: 100%; 
+    min-height: 100%; 
+} 
+ 
+body { 
+    font-family: "Times New Roman", serif; 
+    background: #eee4d8; 
+    color: #2d211b; 
+} 
+ 
+.website { 
+    width: 100%; 
+    min-height: 100vh; 
+} 
+ 
+ 
+/* ======================================== 
+   NAVBAR 
+======================================== */ 
+ 
+.navbar { 
+    width: 100%; 
+    min-height: 65px; 
+    background: #5a301b; 
+ 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+ 
+    padding: 0 4%; 
+ 
+    position: relative; 
+    z-index: 1000; 
+} 
+ 
+.brand { 
+    display: flex; 
+    align-items: center; 
+    gap: 15px; 
+    min-width: 0; 
+} 
+ 
+.logo { 
+    width: 48px; 
+    height: 48px; 
+ 
+    border-radius: 50%; 
+    overflow: hidden; 
+ 
+    background: #eeeeee; 
+ 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+ 
+    flex-shrink: 0; 
+} 
+ 
+.logo img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: contain; 
+} 
+ 
+.brand-name { 
+    display: flex; 
+    flex-direction: column; 
+ 
+    color: white; 
+ 
+    min-width: 0; 
+} 
+ 
+.brand-name strong { 
+    font-size: 19px; 
+    line-height: 1; 
+} 
+ 
+.brand-name span { 
+    font-size: 12px; 
+    margin-top: 5px; 
+} 
+ 
+ 
+/* ======================================== 
+   MENU 
+======================================== */ 
+ 
+.menu { 
+    display: flex; 
+    align-items: center; 
+    gap: 28px; 
+} 
+ 
+.menu a { 
+    text-decoration: none; 
+    color: white; 
+ 
+    font-size: 15px; 
+ 
+    white-space: nowrap; 
+ 
+    transition: 0.2s; 
+} 
+ 
+.menu a:hover { 
+    color: #efa064; 
+} 
+ 
+.menu a.active { 
+    color: #efa064; 
+} 
+ 
+.menu .login { 
+    display: flex; 
+    align-items: center; 
+    gap: 6px; 
+} 
+ 
+.menu-toggle { 
+    display: none; 
+ 
+    border: none; 
+    background: transparent; 
+ 
+    color: white; 
+ 
+    font-size: 25px; 
+ 
+    cursor: pointer; 
+ 
+    padding: 5px; 
+} 
+
+
+/* ========================================
+   HERO
+======================================== */
+
+.hero {
+    width: 100%;
+    background: #eee4d8;
+    min-height: 385px;
+    padding: 60px 8%;
+}
+
+.hero-content {
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 55px;
+    align-items: center;
+}
+
+.hero-text {
+    width: 100%;
+}
+
+.welcome {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 25px;
+    color: #8b5e3c;
+    margin-bottom: 6px;
+}
+
+.hero-text h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 39px;
+    line-height: 1.05;
+    color: #5a301b;
+    font-weight: 900;
+}
+
+.hero-text h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 27px;
+    line-height: 1.1;
+    color: #5a301b;
+    margin-top: 3px;
+}
+
+.description {
+    max-width: 650px;
+    margin-top: 22px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #49382e;
+}
+
+.hero-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
+    padding: 11px 21px;
+    background: #8b5e3c;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: bold;
+    transition: 0.2s ease;
+}
+
+.hero-button:hover {
+    background: #70482f;
+}
+
+.hero-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 530px;
+    height: 260px;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* ========================================
+   LAYANAN
+======================================== */
+
+.layanan {
+    width: 100%;
+    background: #faf8f5;
+    padding: 38px 8% 32px;
+}
+
+.section-title {
+    text-align: center;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 25px;
+    color: #3f2417;
+    margin-bottom: 25px;
+}
+
+.layanan-list {
+    width: 100%;
+    max-width: 1150px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.layanan-card {
+    height: 150px;
+    border-radius: 17px;
+    background: #e8d5c0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #3d2b20;
+}
+
+.layanan-card.darker {
+    background: #c89f7b;
+}
+
+/* ICON LAYANAN */
+
+.layanan-icon {
+    font-size: 35px;
+    margin-bottom: 12px;
+    line-height: 1;
+}
+
+.layanan-card h3 {
+    font-size: 15px;
+    line-height: 1.3;
+    margin-bottom: 5px;
+}
+
+.layanan-card p {
+    font-size: 12px;
+}
+
+.layanan-button-area {
+    width: 100%;
+    max-width: 1150px;
+    margin: 17px auto 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.layanan-button-area a {
+    background: #8b5e3c;
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 6px;
+    transition: 0.2s ease;
+}
+
+.layanan-button-area a:hover {
+    background: #70482f;
+}
+
+
+/* ========================================
+   TERBARU DARI KAMI
+======================================== */
+
+.terbaru {
+    width: 100%;
+    background: #eee4d8;
+    padding: 35px 8% 40px;
+}
+
+.terbaru-content {
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 55px;
+    align-items: start;
+}
+
+.terbaru-kiri {
+    width: 100%;
+}
+
+.terbaru-kiri h2,
+.dokumentasi h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 25px;
+    color: #3f2417;
+    margin-bottom: 18px;
+}
+
+
+/* ========================================
+   ARTIKEL TERBARU
+======================================== */
+
+.artikel-mini {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.artikel-mini-card {
+    width: 100%;
+    min-height: 110px;
+    background: #c89f7b;
+    border-radius: 13px;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid #b98d68;
+    transition: 0.2s ease;
+}
+
+.artikel-mini-card:hover {
+    background: #d6b494;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.10);
+}
+
+.mini-image {
+    width: 125px;
+    height: 78px;
+    flex-shrink: 0;
+    background: #d5d5d5;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.mini-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.mini-info {
+    flex: 1;
+}
+
+.mini-info h3 {
+    font-size: 17px;
+    line-height: 1.3;
+    color: #5a301b;
+    margin-bottom: 7px;
+}
+
+.mini-info p {
+    font-size: 15px;
+    line-height: 1.5;
+    color: #49382e;
+    margin-bottom: 7px;
+}
+
+.baca-artikel {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: bold;
+    color: #70482f;
+}
+
+
+/* ========================================
+   DOKUMENTASI / GALERI
+======================================== */
+
+.dokumentasi {
+    width: 100%;
+}
+
+.dokumentasi-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.dokumentasi-grid img {
+    width: 100%;
+    height: 105px;
+    object-fit: cover;
+    background: #d5d5d5;
+    display: block;
+    border-radius: 8px;
+}
+
+.selengkapnya-area {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 15px;
+}
+
+.selengkapnya-area a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #8b5e3c;
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 9px 16px;
+    border-radius: 6px;
+    transition: 0.2s ease;
+}
+
+.selengkapnya-area a:hover {
+    background: #70482f;
+}
+
+
+/* ========================================
+   DATA KOSONG
+======================================== */
+
+.data-kosong {
+    width: 100%;
+    min-height: 150px;
+    background: #f5eee7;
+    border: 1px solid #dfcdbb;
+    border-radius: 13px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    color: #70482f;
+    padding: 25px 15px;
+}
+
+.data-kosong i {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.data-kosong p {
+    margin: 0;
+    font-size: 15px;
+    color: #70482f;
+}
+
+
+/* ========================================
+   LAYANAN KOSONG
+======================================== */
+
+.layanan-list .data-kosong {
+    grid-column: 1 / -1;
+}
+
+
+/* ========================================
+   ARTIKEL KOSONG
+======================================== */
+
+.artikel-kosong {
+    width: 100%;
+    min-height: 150px;
+}
+
+
+/* ========================================
+   GALERI KOSONG
+======================================== */
+
+.galeri-kosong {
+    width: 100%;
+    min-height: 150px;
+    grid-column: 1 / -1;
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+.footer {
+    width: 100%;
+}
+
+.footer-content {
+    width: 100%;
+    min-height: 104px;
+    background: #5a301b;
+    color: white;
+    display: grid;
+    grid-template-columns: 1.15fr 1.3fr 1fr 1.4fr;
+    align-items: center;
+    padding: 15px 2%;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-right: 20px;
+}
+
+.footer-logo {
+    width: 43px;
+    height: 43px;
+    border-radius: 50%;
+    background: #eeeeee;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.footer-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.footer-brand h3 {
+    font-size: 20px;
+    line-height: 1;
+}
+
+.footer-brand span {
+    font-size: 11px;
+}
+
+.footer-description {
+    text-align: center;
+    border-left: 1px solid rgba(255,255,255,0.5);
+    padding: 0 20px;
+}
+
+.footer-description p {
+    font-size: 13px;
+    line-height: 1.35;
+    margin-bottom: 8px;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 7px;
+}
+
+.footer-social a {
+    color: #ffffff;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.footer-contact {
+    border-left: 1px solid rgba(255,255,255,0.5);
+    padding: 0 20px;
+}
+
+.footer-contact p {
+    font-size: 11px;
+    margin-bottom: 7px;
+}
+
+.footer-contact i {
+    width: 17px;
+}
+
+.footer-contact small {
+    display: block;
+    margin-left: 22px;
+    font-size: 8px;
+}
+
+.footer-address {
+    border-left: 1px solid rgba(255,255,255,0.5);
+    padding-left: 20px;
+}
+
+.footer-address p {
+    font-size: 11px;
+    line-height: 1.45;
+    margin-bottom: 6px;
+}
+
+.footer-address i {
+    margin-right: 5px;
+}
+
+.copyright {
+    width: 100%;
+    min-height: 44px;
+    background: #f7ddba;
+    color: #21160f;
+    display: flex;
+    align-items: center;
+    padding: 0 2%;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+
+/* ========================================
+   LAPTOP
+======================================== */
+
+@media (max-width: 1100px) {
+
+    .navbar {
+        padding: 0 5%;
+    }
+
+    .hero,
+    .layanan,
+    .terbaru {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .footer-content {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .copyright {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .menu {
+        gap: 20px;
+    }
+
+    .hero-text h1 {
+        font-size: 34px;
+    }
+
+    .hero-text h2 {
+        font-size: 24px;
+    }
+
+    .terbaru-content {
+        gap: 35px;
+    }
+
+    .mini-image {
+        width: 110px;
+        height: 75px;
+    }
+
+    .mini-info h3 {
+        font-size: 16px;
+    }
+
+    .mini-info p {
+        font-size: 14px;
+    }
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        height: 70px;
+        padding: 0 25px;
+        position: relative;
+    }
+
+    .menu {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #5a301b;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        padding: 10px 25px 20px;
+        z-index: 100;
+    }
+
+    .menu.show {
+        display: flex;
+    }
+
+    .menu a {
+        width: 100%;
+        padding: 12px 0;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        padding: 45px 30px;
+        min-height: auto;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        text-align: center;
+    }
+
+    .hero-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .description {
+        max-width: 650px;
+    }
+
+    .hero-image img {
+        max-width: 600px;
+        height: 260px;
+    }
+
+
+    /* LAYANAN */
+
+    .layanan {
+        padding: 35px 30px;
+    }
+
+    .layanan-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    /* TERBARU */
+
+    .terbaru {
+        padding: 35px 30px;
+    }
+
+    .terbaru-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .artikel-mini-card {
+        min-height: 110px;
+        padding: 12px;
+    }
+
+    .mini-image {
+        width: 130px;
+        height: 80px;
+    }
+
+    .mini-info h3 {
+        font-size: 17px;
+    }
+
+    .mini-info p {
+        font-size: 14px;
+    }
+
+    .baca-artikel {
+        font-size: 13px;
+    }
+
+    .dokumentasi-grid img {
+        height: 120px;
+    }
+
+
+    /* FOOTER */
+
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+        padding: 30px;
+    }
+
+    .footer-description,
+    .footer-contact,
+    .footer-address {
+        border-left: none;
+        padding: 0;
+    }
+
+
+    /* DATA KOSONG */
+
+    .data-kosong {
+        min-height: 140px;
+    }
+
+}
+
+
+/* ========================================
+   HP
+======================================== */
+
+@media (max-width: 550px) {
+
+    .navbar {
+        padding: 0 18px;
+    }
+
+    .logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    .brand-name strong {
+        font-size: 15px;
+    }
+
+    .brand-name span {
+        font-size: 9px;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        padding: 35px 20px;
+    }
+
+    .welcome {
+        font-size: 21px;
+    }
+
+    .hero-text h1 {
+        font-size: 29px;
+    }
+
+    .hero-text h2 {
+        font-size: 21px;
+    }
+
+    .description {
+        font-size: 14px;
+        line-height: 1.55;
+    }
+
+    .hero-image img {
+        height: 210px;
+    }
+
+
+    /* LAYANAN */
+
+    .layanan {
+        padding: 30px 20px;
+    }
+
+    .section-title {
+        font-size: 22px;
+    }
+
+    .layanan-list {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .layanan-card {
+        height: 135px;
+    }
+
+    .layanan-icon {
+        font-size: 35px;
+        margin-bottom: 12px;
+    }
+
+    .layanan-card h3 {
+        font-size: 15px;
+    }
+
+    .layanan-card p {
+        font-size: 12px;
+    }
+
+
+    /* TERBARU */
+
+    .terbaru {
+        padding: 30px 20px;
+    }
+
+    .terbaru-kiri h2,
+    .dokumentasi h2 {
+        font-size: 21px;
+    }
+
+    .artikel-mini {
+        gap: 12px;
+    }
+
+    .artikel-mini-card {
+        min-height: 105px;
+        padding: 10px;
+        gap: 12px;
+    }
+
+    .mini-image {
+        width: 95px;
+        height: 68px;
+    }
+
+    .mini-info h3 {
+        font-size: 15px;
+    }
+
+    .mini-info p {
+        font-size: 13px;
+        line-height: 1.45;
+    }
+
+    .baca-artikel {
+        font-size: 12px;
+    }
+
+    .dokumentasi-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .dokumentasi-grid img {
+        height: 90px;
+    }
+
+    .selengkapnya-area {
+        margin-top: 12px;
+    }
+
+    .selengkapnya-area a {
+        font-size: 12px;
+        padding: 8px 13px;
+    }
+
+
+    /* FOOTER */
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        padding: 30px 20px;
+        text-align: center;
+    }
+
+    .footer-brand {
+        justify-content: center;
+        padding: 0;
+    }
+
+    .footer-description,
+    .footer-contact,
+    .footer-address {
+        text-align: center;
+    }
+
+    .footer-contact small {
+        margin-left: 0;
+    }
+
+    .copyright {
+        justify-content: center;
+        text-align: center;
+        padding: 12px 15px;
+        font-size: 11px;
+    }
+
+
+    /* DATA KOSONG */
+
+    .data-kosong {
+        min-height: 130px;
+        padding: 20px 15px;
+    }
+
+    .data-kosong i {
+        font-size: 28px;
+        margin-bottom: 9px;
+    }
+
+    .data-kosong p {
+        font-size: 14px;
+    }
+
+}

@@ -1,0 +1,864 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family: "Times New Roman", serif;
+    background: #eee4d8;
+    color: #3b2a20;
+}
+
+.website {
+    width: 100%;
+    min-height: 100vh;
+}
+
+
+/* ========================================
+   NAVBAR
+   SAMA SEPERTI BERANDA
+======================================== */
+
+.navbar {
+    width: 100%;
+    min-height: 65px;
+    background: #5a301b;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 4%;
+
+    position: relative;
+    z-index: 1000;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    min-width: 0;
+}
+
+.logo {
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+    overflow: hidden;
+
+    background: #eeeeee;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.brand-name {
+    display: flex;
+    flex-direction: column;
+
+    color: white;
+
+    min-width: 0;
+}
+
+.brand-name strong {
+    font-size: 19px;
+    line-height: 1;
+}
+
+.brand-name span {
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+
+/* ========================================
+   MENU
+======================================== */
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+
+    font-size: 15px;
+
+    white-space: nowrap;
+
+    transition: 0.2s;
+}
+
+.menu a:hover {
+    color: #efa064;
+}
+
+.menu a.active {
+    color: #efa064;
+}
+
+.menu .login {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.menu-toggle {
+    display: none;
+
+    border: none;
+    background: transparent;
+
+    color: white;
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+    padding: 5px;
+}
+
+
+/* ========================================
+   ARTIKEL
+======================================== */
+
+.artikel {
+    width: 100%;
+
+    min-height: calc(100vh - 175px);
+
+    padding: 28px 30px 70px;
+
+    background: #fffaf5;
+}
+
+.artikel h1 {
+    text-align: center;
+
+    font-size: 26px;
+
+    margin: 0 0 42px;
+
+    color: #4b3022;
+}
+
+
+/* ========================================
+   GRID ARTIKEL
+======================================== */
+
+.artikel-grid {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 24px;
+}
+
+
+/* ========================================
+   CARD ARTIKEL
+======================================== */
+
+.artikel-card {
+    width: 100%;
+
+    background: #ead8c4;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+
+    padding-bottom: 20px;
+}
+
+
+/* ========================================
+   GAMBAR
+======================================== */
+
+.artikel-image {
+    width: 100%;
+
+    height: 180px;
+
+    background: #d6b99d;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+.artikel-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+
+/* ========================================
+   JUDUL
+======================================== */
+
+.artikel-card h2 {
+    font-size: 18px;
+
+    line-height: 1.3;
+
+    font-weight: normal;
+
+    color: #4b3022;
+
+    padding: 16px 18px 5px;
+
+    word-break: break-word;
+}
+
+
+/* ========================================
+   TANGGAL
+======================================== */
+
+.tanggal {
+    padding: 0 18px;
+
+    font-size: 12px;
+
+    color: #806b5d;
+
+    margin-bottom: 10px;
+}
+
+
+/* ========================================
+   ISI ARTIKEL
+======================================== */
+
+.artikel-isi {
+    padding: 0 18px;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    color: #5c4a3d;
+
+    display: -webkit-box;
+
+    -webkit-line-clamp: 4;
+
+    -webkit-box-orient: vertical;
+
+    overflow: hidden;
+
+    margin-bottom: 18px;
+}
+
+
+/* ========================================
+   TOMBOL SELENGKAPNYA
+======================================== */
+
+.btn-selengkapnya {
+    align-self: flex-start;
+
+    margin-left: 18px;
+
+    padding: 9px 14px;
+
+    background: #70482f;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 7px;
+
+    font-size: 13px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    transition: 0.2s;
+}
+
+.btn-selengkapnya:hover {
+    background: #5a301b;
+}
+
+.btn-selengkapnya i {
+    font-size: 11px;
+}
+
+
+/* ========================================
+   BELUM ADA ARTIKEL
+======================================== */
+
+.artikel-kosong {
+    width: 100%;
+
+    min-height: 180px;
+
+    grid-column: 1 / -1;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #f5eee7;
+
+    border-radius: 10px;
+
+    color: #70482f;
+
+    text-align: center;
+}
+
+.artikel-kosong i {
+    font-size: 35px;
+
+    margin-bottom: 12px;
+}
+
+.artikel-kosong p {
+    margin: 0;
+
+    font-size: 16px;
+}
+
+
+/* ========================================
+   FOOTER
+   SAMA SEPERTI BERANDA
+======================================== */
+
+.footer {
+    width: 100%;
+}
+
+.footer-content {
+    width: 100%;
+
+    min-height: 104px;
+
+    background: #5a301b;
+
+    color: white;
+
+    display: grid;
+
+    grid-template-columns: 1.15fr 1.3fr 1fr 1.4fr;
+
+    align-items: center;
+
+    padding: 15px 2%;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding-right: 20px;
+}
+
+.footer-logo {
+    width: 43px;
+    height: 43px;
+
+    border-radius: 50%;
+
+    background: #eeeeee;
+
+    overflow: hidden;
+
+    flex-shrink: 0;
+}
+
+.footer-logo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+.footer-brand h3 {
+    font-size: 20px;
+
+    line-height: 1;
+}
+
+.footer-brand span {
+    font-size: 11px;
+}
+
+.footer-description {
+    text-align: center;
+
+    border-left: 1px solid rgba(255,255,255,0.5);
+
+    padding: 0 20px;
+}
+
+.footer-description p {
+    font-size: 13px;
+
+    line-height: 1.35;
+
+    margin-bottom: 8px;
+}
+
+.footer-social {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 18px;
+
+    margin-top: 7px;
+}
+
+.footer-social a {
+    color: #ffffff;
+
+    font-size: 18px;
+
+    text-decoration: none;
+}
+
+.footer-contact {
+    border-left: 1px solid rgba(255,255,255,0.5);
+
+    padding: 0 20px;
+}
+
+.footer-contact p {
+    font-size: 11px;
+
+    margin-bottom: 7px;
+}
+
+.footer-contact i {
+    width: 17px;
+}
+
+.footer-contact small {
+    display: block;
+
+    margin-left: 22px;
+
+    font-size: 8px;
+}
+
+.footer-address {
+    border-left: 1px solid rgba(255,255,255,0.5);
+
+    padding-left: 20px;
+}
+
+.footer-address p {
+    font-size: 11px;
+
+    line-height: 1.45;
+
+    margin-bottom: 6px;
+}
+
+.footer-address i {
+    margin-right: 5px;
+}
+
+.copyright {
+    width: 100%;
+
+    min-height: 44px;
+
+    background: #f7ddba;
+
+    color: #21160f;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 0 2%;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+
+/* ========================================
+   RESPONSIVE 1100px
+   SAMA SEPERTI BERANDA
+======================================== */
+
+@media (max-width: 1100px) {
+
+    .navbar {
+        padding: 0 5%;
+    }
+
+    .menu {
+        gap: 20px;
+    }
+
+    .artikel {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .artikel-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .footer-content {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .copyright {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
+
+
+/* ========================================
+   RESPONSIVE 768px
+======================================== */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        height: 70px;
+
+        padding: 0 25px;
+
+        position: relative;
+    }
+
+    .menu {
+        display: none;
+
+        position: absolute;
+
+        top: 70px;
+        left: 0;
+
+        width: 100%;
+
+        background: #5a301b;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 0;
+
+        padding: 10px 25px 20px;
+
+        z-index: 100;
+    }
+
+    .menu.show {
+        display: flex;
+    }
+
+    .menu a {
+        width: 100%;
+
+        padding: 12px 0;
+
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+
+    /* ARTIKEL */
+
+    .artikel {
+        padding: 25px;
+
+        min-height: auto;
+    }
+
+    .artikel h1 {
+        font-size: 24px;
+
+        margin-bottom: 32px;
+    }
+
+    .artikel-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 20px;
+    }
+
+    .artikel-image {
+        height: 165px;
+    }
+
+
+    /* FOOTER */
+
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 25px;
+
+        padding: 30px;
+    }
+
+    .footer-description,
+    .footer-contact,
+    .footer-address {
+        border-left: none;
+
+        padding: 0;
+    }
+}
+
+
+/* ========================================
+   RESPONSIVE 550px
+======================================== */
+
+@media (max-width: 550px) {
+
+    .navbar {
+        padding: 0 18px;
+    }
+
+    .logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    .brand-name strong {
+        font-size: 15px;
+    }
+
+    .brand-name span {
+        font-size: 9px;
+    }
+
+
+    /* ARTIKEL */
+
+    .artikel {
+        padding: 20px 20px 35px;
+
+        min-height: auto;
+    }
+
+    .artikel h1 {
+        font-size: 23px;
+
+        margin-bottom: 28px;
+    }
+
+    .artikel-grid {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+    .artikel-card {
+        width: 100%;
+    }
+
+    .artikel-image {
+        height: 190px;
+    }
+
+    .artikel-card h2 {
+        font-size: 17px;
+    }
+
+    .artikel-isi {
+        font-size: 14px;
+    }
+
+
+    /* ARTIKEL KOSONG */
+
+    .artikel-kosong {
+        min-height: 160px;
+
+        padding: 25px 15px;
+    }
+
+    .artikel-kosong i {
+        font-size: 32px;
+    }
+
+    .artikel-kosong p {
+        font-size: 15px;
+    }
+
+
+    /* FOOTER */
+
+    .footer-content {
+        grid-template-columns: 1fr;
+
+        padding: 30px 20px;
+
+        text-align: center;
+    }
+
+    .footer-brand {
+        justify-content: center;
+
+        padding: 0;
+    }
+
+    .footer-description,
+    .footer-contact,
+    .footer-address {
+        text-align: center;
+    }
+
+    .footer-contact small {
+        margin-left: 0;
+    }
+
+    .copyright {
+        justify-content: center;
+
+        text-align: center;
+
+        padding: 12px 15px;
+
+        font-size: 11px;
+    }
+}
+
+
+/* ========================================
+   RESPONSIVE 430px
+======================================== */
+
+@media (max-width: 430px) {
+
+    .navbar {
+        padding: 0 12px;
+    }
+
+    .brand {
+        gap: 8px;
+    }
+
+    .logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    .brand-name strong {
+        font-size: 14px;
+    }
+
+    .brand-name span {
+        font-size: 8px;
+    }
+
+    .menu-toggle {
+        font-size: 23px;
+    }
+
+
+    /* ARTIKEL */
+
+    .artikel {
+        padding: 20px 15px 30px;
+    }
+
+    .artikel h1 {
+        font-size: 22px;
+
+        margin-bottom: 25px;
+    }
+
+    .artikel-grid {
+        gap: 18px;
+    }
+
+    .artikel-image {
+        height: 180px;
+    }
+
+    .artikel-card h2 {
+        font-size: 16px;
+
+        padding: 14px 15px 5px;
+    }
+
+    .tanggal {
+        padding: 0 15px;
+    }
+
+    .artikel-isi {
+        padding: 0 15px;
+
+        font-size: 13px;
+    }
+
+    .btn-selengkapnya {
+        margin-left: 15px;
+
+        font-size: 12px;
+
+        padding: 8px 12px;
+    }
+
+}
