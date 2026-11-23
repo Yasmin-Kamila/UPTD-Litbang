@@ -17,7 +17,8 @@ use App\Http\Middleware\AdminMiddleware;
 |--------------------------------------------------------------------------
 */
 
-Route::get('/', [BerandaController::class, 'frontend'])->name('beranda');
+Route::get('/', [BerandaController::class, 'frontend'])
+    ->name('beranda');
 
 Route::get('/profil', [ProfilController::class, 'frontend'])
     ->name('profil');
@@ -30,6 +31,10 @@ Route::get('/galeri', [GaleriController::class, 'frontend'])
 
 Route::get('/artikel', [ArtikelController::class, 'frontend'])
     ->name('artikel');
+
+// DETAIL ARTIKEL
+Route::get('/artikel/{id}', [ArtikelController::class, 'detail'])
+    ->name('artikel.detail');
 
 Route::get('/organigram', [OrganigramController::class, 'frontend'])
     ->name('organigram');

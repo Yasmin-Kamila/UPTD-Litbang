@@ -1,3 +1,7 @@
+/* ========================================
+   RESET
+======================================== */
+
 * {
     margin: 0;
     padding: 0;
@@ -25,23 +29,18 @@ body {
     min-height: 100vh;
 }
 
-
 /* ========================================
    NAVBAR
-   SAMA SEPERTI BERANDA
 ======================================== */
 
 .navbar {
     width: 100%;
     min-height: 65px;
     background: #5a301b;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     padding: 0 4%;
-
     position: relative;
     z-index: 1000;
 }
@@ -56,16 +55,12 @@ body {
 .logo {
     width: 48px;
     height: 48px;
-
     border-radius: 50%;
     overflow: hidden;
-
     background: #eeeeee;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     flex-shrink: 0;
 }
 
@@ -78,9 +73,7 @@ body {
 .brand-name {
     display: flex;
     flex-direction: column;
-
     color: white;
-
     min-width: 0;
 }
 
@@ -94,11 +87,6 @@ body {
     margin-top: 5px;
 }
 
-
-/* ========================================
-   MENU
-======================================== */
-
 .menu {
     display: flex;
     align-items: center;
@@ -108,18 +96,12 @@ body {
 .menu a {
     text-decoration: none;
     color: white;
-
     font-size: 15px;
-
     white-space: nowrap;
-
     transition: 0.2s;
 }
 
-.menu a:hover {
-    color: #efa064;
-}
-
+.menu a:hover,
 .menu a.active {
     color: #efa064;
 }
@@ -132,43 +114,43 @@ body {
 
 .menu-toggle {
     display: none;
-
     border: none;
     background: transparent;
-
     color: white;
-
     font-size: 25px;
-
     cursor: pointer;
-
     padding: 5px;
 }
 
-
 /* ========================================
-   KONTEN LAYANAN
+   KONTEN
 ======================================== */
 
 .content {
     width: 100%;
     min-height: calc(100vh - 175px);
-
-    padding: 28px 30px 70px;
-
+    padding: 50px 6% 75px;
     background: #fffaf5;
 }
 
 .page-title {
     text-align: center;
-
-    font-size: 26px;
-
-    margin: 0 0 42px;
-
+    font-size: 30px;
+    font-weight: normal;
+    letter-spacing: 2px;
     color: #4b3022;
+    margin-bottom: 12px;
 }
 
+.page-title::after {
+    content: "";
+    display: block;
+    width: 65px;
+    height: 3px;
+    background: #b77a4b;
+    margin: 15px auto 0;
+    border-radius: 5px;
+}
 
 /* ========================================
    DAFTAR LAYANAN
@@ -176,103 +158,125 @@ body {
 
 .layanan-list {
     width: 100%;
+    max-width: 1200px;
+    margin: 40px auto 0;
 
     display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
 
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-
-    gap: 24px;
+    align-items: stretch;
 }
 
 .layanan-card {
     width: 100%;
-    min-height: 205px;
+    min-height: 230px;
 
-    background: #ead8c4;
-
-    border-radius: 22px;
+    background: #f4e9dc;
+    border: 1px solid #ead8c4;
+    border-radius: 16px;
 
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
 
-    text-align: center;
+    text-align: left;
+    padding: 25px 24px;
 
-    padding: 25px 20px;
+    transition: 0.25s ease;
 }
 
-.card-icon {
-    font-size: 35px;
-
-    margin-bottom: 12px;
-
-    color: #795548;
+.layanan-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(77, 47, 29, 0.12);
+    background: #f8eee3;
 }
-
-.layanan-card h2 {
-    font-size: 17px;
-
-    line-height: 1.2;
-
-    font-weight: normal;
-
-    color: #4b3022;
-
-    margin-bottom: 20px;
-}
-
-.dots {
-    font-size: 14px;
-
-    line-height: 1.8;
-
-    max-width: 180px;
-
-    color: #5c4a3d;
-}
-
 
 /* ========================================
-   BELUM ADA LAYANAN
+   IKON LAYANAN
+======================================== */
+
+.card-icon {
+    width: 54px;
+    height: 54px;
+    border-radius: 13px;
+
+    background: #e5c9ad;
+    color: #70452c;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 25px;
+    margin-bottom: 17px;
+    flex-shrink: 0;
+}
+
+/* ========================================
+   JUDUL LAYANAN
+======================================== */
+
+.layanan-card h2 {
+    width: 100%;
+
+    font-size: 19px;
+    line-height: 1.4;
+    font-weight: bold;
+    color: #4b3022;
+
+    margin-bottom: 10px;
+}
+
+/* ========================================
+   DESKRIPSI LAYANAN
+======================================== */
+
+.dots {
+    width: 100%;
+
+    font-size: 14px;
+    line-height: 1.65;
+    color: #6b5748;
+
+    text-align: left;
+    overflow-wrap: break-word;
+}
+
+/* ========================================
+   DATA KOSONG
 ======================================== */
 
 .empty-layanan {
     width: 100%;
-    min-height: 180px;
-
+    min-height: 200px;
     grid-column: 1 / -1;
 
     display: flex;
     flex-direction: column;
-
     align-items: center;
     justify-content: center;
 
-    background: #f5eee7;
-
-    border-radius: 10px;
+    background: #f4e9dc;
+    border: 1px solid #ead8c4;
+    border-radius: 18px;
 
     color: #70482f;
-
     text-align: center;
+    padding: 25px;
 }
 
 .empty-layanan i {
-    font-size: 35px;
-
-    margin-bottom: 12px;
+    font-size: 38px;
+    margin-bottom: 15px;
 }
 
 .empty-layanan p {
-    margin: 0;
-
     font-size: 16px;
 }
 
-
 /* ========================================
    FOOTER
-   SAMA SEPERTI BERANDA
 ======================================== */
 
 .footer {
@@ -281,54 +285,40 @@ body {
 
 .footer-content {
     width: 100%;
-
     min-height: 104px;
-
     background: #5a301b;
-
     color: white;
 
     display: grid;
-
     grid-template-columns: 1.15fr 1.3fr 1fr 1.4fr;
-
     align-items: center;
-
     padding: 15px 2%;
 }
 
 .footer-brand {
     display: flex;
     align-items: center;
-
     gap: 10px;
-
     padding-right: 20px;
 }
 
 .footer-logo {
     width: 43px;
     height: 43px;
-
     border-radius: 50%;
-
     background: #eeeeee;
-
     overflow: hidden;
-
     flex-shrink: 0;
 }
 
 .footer-logo img {
     width: 100%;
     height: 100%;
-
     object-fit: contain;
 }
 
 .footer-brand h3 {
     font-size: 20px;
-
     line-height: 1;
 }
 
@@ -338,47 +328,36 @@ body {
 
 .footer-description {
     text-align: center;
-
     border-left: 1px solid rgba(255,255,255,0.5);
-
     padding: 0 20px;
 }
 
 .footer-description p {
     font-size: 13px;
-
     line-height: 1.35;
-
     margin-bottom: 8px;
 }
 
 .footer-social {
     display: flex;
-
     justify-content: center;
-
     gap: 18px;
-
     margin-top: 7px;
 }
 
 .footer-social a {
     color: #ffffff;
-
     font-size: 18px;
-
     text-decoration: none;
 }
 
 .footer-contact {
     border-left: 1px solid rgba(255,255,255,0.5);
-
     padding: 0 20px;
 }
 
 .footer-contact p {
     font-size: 11px;
-
     margin-bottom: 7px;
 }
 
@@ -388,23 +367,18 @@ body {
 
 .footer-contact small {
     display: block;
-
     margin-left: 22px;
-
     font-size: 8px;
 }
 
 .footer-address {
     border-left: 1px solid rgba(255,255,255,0.5);
-
     padding-left: 20px;
 }
 
 .footer-address p {
     font-size: 11px;
-
     line-height: 1.45;
-
     margin-bottom: 6px;
 }
 
@@ -414,28 +388,20 @@ body {
 
 .copyright {
     width: 100%;
-
     min-height: 44px;
-
     background: #f7ddba;
-
     color: #21160f;
 
     display: flex;
-
     align-items: center;
-
     padding: 0 2%;
 
     font-size: 13px;
-
     font-weight: bold;
 }
 
-
 /* ========================================
    RESPONSIVE 1100px
-   SAMA SEPERTI BERANDA
 ======================================== */
 
 @media (max-width: 1100px) {
@@ -453,6 +419,11 @@ body {
         padding-right: 5%;
     }
 
+    .layanan-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
     .footer-content {
         padding-left: 5%;
         padding-right: 5%;
@@ -463,7 +434,6 @@ body {
         padding-right: 5%;
     }
 }
-
 
 /* ========================================
    RESPONSIVE 768px
@@ -473,298 +443,22 @@ body {
 
     .navbar {
         height: 70px;
-
         padding: 0 25px;
-
         position: relative;
     }
 
     .menu {
         display: none;
-
         position: absolute;
-
         top: 70px;
         left: 0;
-
         width: 100%;
 
         background: #5a301b;
-
         flex-direction: column;
-
         align-items: flex-start;
-
         gap: 0;
 
         padding: 10px 25px 20px;
-
-        z-index: 100;
     }
-
-    .menu.show {
-        display: flex;
-    }
-
-    .menu a {
-        width: 100%;
-
-        padding: 12px 0;
-
-        border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-
-
-    /* KONTEN */
-
-    .content {
-        padding: 25px;
-
-        min-height: auto;
-    }
-
-    .page-title {
-        font-size: 24px;
-
-        margin-bottom: 32px;
-    }
-
-
-    /* CARD */
-
-    .layanan-list {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-
-        gap: 20px;
-    }
-
-    .layanan-card {
-        min-height: 200px;
-
-        padding: 24px 18px;
-    }
-
-
-    /* FOOTER */
-
-    .footer-content {
-        grid-template-columns: repeat(2, 1fr);
-
-        gap: 25px;
-
-        padding: 30px;
-    }
-
-    .footer-description,
-    .footer-contact,
-    .footer-address {
-        border-left: none;
-
-        padding: 0;
-    }
-}
-
-
-/* ========================================
-   RESPONSIVE 550px
-======================================== */
-
-@media (max-width: 550px) {
-
-    .navbar {
-        padding: 0 18px;
-    }
-
-    .logo {
-        width: 40px;
-        height: 40px;
-    }
-
-    .brand-name strong {
-        font-size: 15px;
-    }
-
-    .brand-name span {
-        font-size: 9px;
-    }
-
-
-    /* KONTEN */
-
-    .content {
-        padding: 20px 20px 35px;
-
-        min-height: auto;
-    }
-
-    .page-title {
-        font-size: 23px;
-
-        margin-bottom: 28px;
-    }
-
-
-    /* CARD */
-
-    .layanan-list {
-        grid-template-columns: 1fr;
-
-        gap: 18px;
-    }
-
-    .layanan-card {
-        min-height: 190px;
-
-        padding: 25px 20px;
-    }
-
-    .card-icon {
-        font-size: 34px;
-    }
-
-    .layanan-card h2 {
-        font-size: 17px;
-    }
-
-    .dots {
-        font-size: 13px;
-
-        line-height: 1.7;
-
-        max-width: 230px;
-    }
-
-
-    /* EMPTY */
-
-    .empty-layanan {
-        min-height: 160px;
-
-        padding: 25px 15px;
-    }
-
-    .empty-layanan i {
-        font-size: 32px;
-    }
-
-    .empty-layanan p {
-        font-size: 15px;
-    }
-
-
-    /* FOOTER */
-
-    .footer-content {
-        grid-template-columns: 1fr;
-
-        padding: 30px 20px;
-
-        text-align: center;
-    }
-
-    .footer-brand {
-        justify-content: center;
-
-        padding: 0;
-    }
-
-    .footer-description,
-    .footer-contact,
-    .footer-address {
-        text-align: center;
-    }
-
-    .footer-contact small {
-        margin-left: 0;
-    }
-
-    .copyright {
-        justify-content: center;
-
-        text-align: center;
-
-        padding: 12px 15px;
-
-        font-size: 11px;
-    }
-}
-
-
-/* ========================================
-   RESPONSIVE 430px
-======================================== */
-
-@media (max-width: 430px) {
-
-    .navbar {
-        padding: 0 12px;
-    }
-
-    .brand {
-        gap: 8px;
-    }
-
-    .logo {
-        width: 40px;
-        height: 40px;
-    }
-
-    .brand-name strong {
-        font-size: 14px;
-    }
-
-    .brand-name span {
-        font-size: 8px;
-    }
-
-    .menu-toggle {
-        font-size: 23px;
-    }
-
-
-    /* KONTEN */
-
-    .content {
-        padding: 20px 15px 30px;
-    }
-
-    .page-title {
-        font-size: 22px;
-
-        margin-bottom: 25px;
-    }
-
-
-    /* CARD */
-
-    .layanan-card {
-        min-height: 185px;
-
-        padding: 23px 16px;
-    }
-
-    .card-icon {
-        font-size: 32px;
-
-        margin-bottom: 10px;
-    }
-
-    .layanan-card h2 {
-        font-size: 16px;
-
-        margin-bottom: 16px;
-    }
-
-    .dots {
-        font-size: 12px;
-
-        line-height: 1.7;
-
-        max-width: 250px;
-    }
-
 }

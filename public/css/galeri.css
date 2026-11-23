@@ -1,7 +1,16 @@
+
+/* ========================================
+   RESET
+======================================== */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 html,
@@ -16,131 +25,16 @@ body {
     color: #2d211b;
 }
 
+/* ========================================
+   WEBSITE
+======================================== */
+
 .website {
     width: 100%;
     min-height: 100vh;
-}
-
-
-/* ========================================
-   NAVBAR
-   SAMA SEPERTI BERANDA
-======================================== */
-
-.navbar {
-    width: 100%;
-    min-height: 65px;
-    background: #5a301b;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding: 0 4%;
-
-    position: relative;
-    z-index: 1000;
-}
-
-.brand {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    min-width: 0;
-}
-
-.logo {
-    width: 48px;
-    height: 48px;
-
-    border-radius: 50%;
-    overflow: hidden;
-
-    background: #eeeeee;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    flex-shrink: 0;
-}
-
-.logo img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-.brand-name {
     display: flex;
     flex-direction: column;
-
-    color: white;
-
-    min-width: 0;
 }
-
-.brand-name strong {
-    font-size: 19px;
-    line-height: 1;
-}
-
-.brand-name span {
-    font-size: 12px;
-    margin-top: 5px;
-}
-
-
-/* ========================================
-   MENU
-======================================== */
-
-.menu {
-    display: flex;
-    align-items: center;
-    gap: 28px;
-}
-
-.menu a {
-    text-decoration: none;
-    color: white;
-
-    font-size: 15px;
-
-    white-space: nowrap;
-
-    transition: 0.2s;
-}
-
-.menu a:hover {
-    color: #efa064;
-}
-
-.menu a.active {
-    color: #efa064;
-}
-
-.menu .login {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.menu-toggle {
-    display: none;
-
-    border: none;
-    background: transparent;
-
-    color: white;
-
-    font-size: 25px;
-
-    cursor: pointer;
-
-    padding: 5px;
-}
-
 
 /* ========================================
    HALAMAN GALERI
@@ -148,581 +42,239 @@ body {
 
 .galeri-page {
     width: 100%;
-
-    padding: 32px 28px 35px;
-
-    background-color: #faf8f5;
-
-    min-height: 488px;
+    flex: 1;
+    padding: 45px 6% 65px;
+    background: #fffaf5;
 }
+
+/* ========================================
+   JUDUL GALERI
+======================================== */
 
 .galeri-page h1 {
     text-align: center;
-
-    font-size: 26px;
-
-    margin: 0 0 42px;
-
-    color: #3f2417;
+    font-size: 30px;
+    font-weight: normal;
+    letter-spacing: 2px;
+    color: #4b3022;
+    margin-bottom: 12px;
 }
 
+.galeri-page h1::after {
+    content: "";
+    display: block;
+    width: 65px;
+    height: 3px;
+    background: #b77a4b;
+    margin: 15px auto 0;
+    border-radius: 5px;
+}
 
 /* ========================================
    GRID GALERI
-   4 GAMBAR PER BARIS
 ======================================== */
 
 .gallery-grid {
     width: 100%;
-
-    max-width: none;
-
-    margin: 0;
+    max-width: 1050px;
+    margin: 35px auto 0;
 
     display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
 
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-
-    column-gap: 24px;
-    row-gap: 32px;
-
-    padding: 0 28px;
+    align-items: stretch;
 }
 
-
 /* ========================================
-   CARD
+   KARTU GALERI
 ======================================== */
 
 .gallery-card {
     width: 100%;
     min-width: 0;
 
-    border-radius: 10px;
+    background: #f4e9dc;
+    border: 1px solid #ead8c4;
+    border-radius: 15px;
 
     overflow: hidden;
 
-    background: #e8d5c0;
+    display: flex;
+    flex-direction: column;
+
+    box-shadow: 0 3px 9px rgba(77, 47, 29, 0.07);
+
+    transition: transform 0.25s ease,
+                box-shadow 0.25s ease;
 }
 
+.gallery-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 7px 16px rgba(77, 47, 29, 0.12);
+}
 
 /* ========================================
-   GAMBAR
-   FOTO TIDAK DIPOTONG
+   GAMBAR GALERI
 ======================================== */
 
 .gallery-image {
     width: 100%;
+    height: 190px;
+    padding: 8px;
 
-    background: #faf8f5;
+    background: #e8d5c0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     overflow: hidden;
 }
 
 .gallery-image img {
-    width: 100%;
-    height: auto;
-
     display: block;
-}
 
-
-/* ========================================
-   INFORMASI GAMBAR
-======================================== */
-
-.gallery-info {
-    min-height: 65px;
-
-    background: #e8d5c0;
-
-    padding: 9px 11px 7px;
-}
-
-.gallery-info h2 {
-    font-size: 16px;
-
-    font-weight: 700;
-
-    line-height: 1.2;
-
-    margin-bottom: 5px;
-
-    word-break: break-word;
-
-    color: #5a301b;
-}
-
-.gallery-info p {
-    display: flex;
-
-    align-items: center;
-
-    gap: 6px;
-
-    font-size: 12px;
-
-    color: #49382e;
-}
-
-.gallery-info p i {
-    font-size: 12px;
-}
-
-
-/* ========================================
-   FOOTER
-   SAMA SEPERTI BERANDA
-======================================== */
-
-.footer {
-    width: 100%;
-}
-
-.footer-content {
-    width: 100%;
-
-    min-height: 104px;
-
-    background: #5a301b;
-
-    color: white;
-
-    display: grid;
-
-    grid-template-columns: 1.15fr 1.3fr 1fr 1.4fr;
-
-    align-items: center;
-
-    padding: 15px 2%;
-}
-
-.footer-brand {
-    display: flex;
-
-    align-items: center;
-
-    gap: 10px;
-
-    padding-right: 20px;
-}
-
-.footer-logo {
-    width: 43px;
-    height: 43px;
-
-    border-radius: 50%;
-
-    background: #eeeeee;
-
-    overflow: hidden;
-
-    flex-shrink: 0;
-}
-
-.footer-logo img {
     width: 100%;
     height: 100%;
 
-    object-fit: contain;
+    object-fit: cover;
+    object-position: center;
+
+    border-radius: 7px;
 }
-
-.footer-brand h3 {
-    font-size: 20px;
-
-    line-height: 1;
-}
-
-.footer-brand span {
-    font-size: 11px;
-}
-
-.footer-description {
-    text-align: center;
-
-    border-left: 1px solid rgba(255,255,255,0.5);
-
-    padding: 0 20px;
-}
-
-.footer-description p {
-    font-size: 13px;
-
-    line-height: 1.35;
-
-    margin-bottom: 8px;
-}
-
-.footer-social {
-    display: flex;
-
-    justify-content: center;
-
-    gap: 18px;
-
-    margin-top: 7px;
-}
-
-.footer-social a {
-    color: #ffffff;
-
-    font-size: 18px;
-
-    text-decoration: none;
-}
-
-.footer-contact {
-    border-left: 1px solid rgba(255,255,255,0.5);
-
-    padding: 0 20px;
-}
-
-.footer-contact p {
-    font-size: 11px;
-
-    margin-bottom: 7px;
-}
-
-.footer-contact i {
-    width: 17px;
-}
-
-.footer-contact small {
-    display: block;
-
-    margin-left: 22px;
-
-    font-size: 8px;
-}
-
-.footer-address {
-    border-left: 1px solid rgba(255,255,255,0.5);
-
-    padding-left: 20px;
-}
-
-.footer-address p {
-    font-size: 11px;
-
-    line-height: 1.45;
-
-    margin-bottom: 6px;
-}
-
-.footer-address i {
-    margin-right: 5px;
-}
-
-.copyright {
-    width: 100%;
-
-    min-height: 44px;
-
-    background: #f7ddba;
-
-    color: #21160f;
-
-    display: flex;
-
-    align-items: center;
-
-    padding: 0 2%;
-
-    font-size: 13px;
-
-    font-weight: bold;
-}
-
 
 /* ========================================
-   LAPTOP
+   INFORMASI GALERI
 ======================================== */
 
-@media (max-width: 1100px) {
+.gallery-info {
+    width: 100%;
+    flex: 1;
 
-    /* NAVBAR */
+    padding: 12px 15px 14px;
 
-    .navbar {
-        padding: 0 5%;
-    }
-
-    .menu {
-        gap: 20px;
-    }
-
-
-    /* GALERI */
-
-    .gallery-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-
-        column-gap: 20px;
-
-        padding: 0 25px;
-    }
-
-
-    /* FOOTER */
-
-    .footer-content {
-        padding-left: 5%;
-        padding-right: 5%;
-    }
-
-    .copyright {
-        padding-left: 5%;
-        padding-right: 5%;
-    }
+    display: flex;
+    flex-direction: column;
 }
 
+/* JUDUL */
+
+.gallery-info h2 {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.4;
+
+    color: #4b3022;
+
+    margin-bottom: 10px;
+
+    overflow-wrap: break-word;
+}
+
+/* TANGGAL */
+
+.gallery-info p {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    font-size: 12px;
+    color: #80634e;
+
+    margin-top: auto;
+}
+
+.gallery-info p i {
+    color: #8b5735;
+    font-size: 13px;
+}
 
 /* ========================================
    TABLET
 ======================================== */
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
 
-    /* NAVBAR */
-
-    .navbar {
-        height: 70px;
-
-        padding: 0 25px;
-
-        position: relative;
+    .galeri-page {
+        padding: 38px 5% 55px;
     }
-
-    .menu {
-        display: none;
-
-        position: absolute;
-
-        top: 70px;
-        left: 0;
-
-        width: 100%;
-
-        background: #5a301b;
-
-        flex-direction: column;
-
-        align-items: flex-start;
-
-        gap: 0;
-
-        padding: 10px 25px 20px;
-
-        z-index: 100;
-    }
-
-    .menu.show {
-        display: flex;
-    }
-
-    .menu a {
-        width: 100%;
-
-        padding: 12px 0;
-
-        border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-
-
-    /* GALERI */
 
     .gallery-grid {
+        max-width: 750px;
         grid-template-columns: repeat(2, minmax(0, 1fr));
-
-        column-gap: 20px;
-
-        row-gap: 25px;
-
-        padding: 0 20px;
+        gap: 18px;
     }
 
-
-    /* FOOTER */
-
-    .footer-content {
-        grid-template-columns: repeat(2, 1fr);
-
-        gap: 25px;
-
-        padding: 30px;
-    }
-
-    .footer-description,
-    .footer-contact,
-    .footer-address {
-        border-left: none;
-
-        padding: 0;
+    .gallery-image {
+        height: 180px;
     }
 }
-
 
 /* ========================================
    MOBILE
 ======================================== */
 
-@media (max-width: 550px) {
-
-    /* NAVBAR */
-
-    .navbar {
-        padding: 0 18px;
-    }
-
-    .logo {
-        width: 40px;
-        height: 40px;
-    }
-
-    .brand-name strong {
-        font-size: 15px;
-    }
-
-    .brand-name span {
-        font-size: 9px;
-    }
-
-
-    /* GALERI */
+@media (max-width: 600px) {
 
     .galeri-page {
-        padding: 30px 20px 35px;
+        padding: 30px 5% 40px;
     }
 
     .galeri-page h1 {
-        font-size: 23px;
-
-        margin-bottom: 30px;
+        font-size: 24px;
+        margin-bottom: 12px;
     }
 
     .gallery-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 350px);
+        justify-content: center;
+        gap: 18px;
+        margin-top: 28px;
+    }
 
-        gap: 25px;
-
-        padding: 0 20px;
-
-        max-width: 430px;
-
-        margin: 0 auto;
+    .gallery-image {
+        height: 185px;
+        padding: 8px;
     }
 
     .gallery-info {
-        min-height: 65px;
+        padding: 12px 14px;
+    }
 
-        padding: 11px 13px;
+    .gallery-info h2 {
+        font-size: 16px;
+    }
+
+    .gallery-info p {
+        font-size: 12px;
+    }
+}
+
+/* ========================================
+   MOBILE KECIL
+======================================== */
+
+@media (max-width: 360px) {
+
+    .galeri-page {
+        padding: 25px 15px 35px;
+    }
+
+    .galeri-page h1 {
+        font-size: 22px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .gallery-image {
+        height: 170px;
+        padding: 8px;
     }
 
     .gallery-info h2 {
         font-size: 15px;
-
-        font-weight: 700;
-    }
-
-    .gallery-info p {
-        font-size: 10px;
-    }
-
-
-    /* FOOTER */
-
-    .footer-content {
-        grid-template-columns: 1fr;
-
-        padding: 30px 20px;
-
-        text-align: center;
-    }
-
-    .footer-brand {
-        justify-content: center;
-
-        padding: 0;
-    }
-
-    .footer-description,
-    .footer-contact,
-    .footer-address {
-        text-align: center;
-    }
-
-    .footer-contact small {
-        margin-left: 0;
-    }
-
-    .copyright {
-        justify-content: center;
-
-        text-align: center;
-
-        padding: 12px 15px;
-
-        font-size: 11px;
-    }
-}
-
-
-/* ========================================
-   HP KECIL
-======================================== */
-
-@media (max-width: 430px) {
-
-    .navbar {
-        padding: 0 12px;
-    }
-
-    .brand {
-        gap: 8px;
-    }
-
-    .logo {
-        width: 40px;
-        height: 40px;
-    }
-
-    .brand-name strong {
-        font-size: 14px;
-    }
-
-    .brand-name span {
-        font-size: 8px;
-    }
-
-    .menu-toggle {
-        font-size: 23px;
-    }
-
-
-    /* GALERI */
-
-    .galeri-page {
-        padding: 25px 15px 30px;
-    }
-
-    .galeri-page h1 {
-        font-size: 21px;
-
-        margin-bottom: 25px;
-    }
-
-    .gallery-grid {
-        max-width: 100%;
-
-        padding: 0 15px;
-    }
-
-    .gallery-info h2 {
-        font-size: 14px;
-
-        font-weight: 700;
     }
 }

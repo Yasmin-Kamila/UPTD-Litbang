@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Organigram;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class OrganigramController extends Controller
 {
+    // Menampilkan data organigram di halaman admin
     public function index()
     {
         $organigram = Organigram::all();
@@ -14,12 +16,15 @@ class OrganigramController extends Controller
         return view('backend.organigram', compact('organigram'));
     }
 
+    // Menampilkan data organigram di halaman depan
     public function frontend()
-{
-    $organigram = Organigram::all();
+    {
+        $organigram = Organigram::all();
 
-    return view('organigram', compact('organigram'));
-}
+        return view('organigram', compact('organigram'));
+    }
+
+    // Menambahkan data organigram
     public function store(Request $request)
     {
         $request->validate([
@@ -28,12 +33,13 @@ class OrganigramController extends Controller
             'gambar' => 'required|image|mimes:jpg,jpeg,png,webp|max:2048',
         ]);
 
+        // Menyimpan gambar ke storage/app/public/organigram
         $namaGambar = $request->file('gambar')->store('organigram', 'public');
 
         Organigram::create([
             'nama' => $request->nama,
-            'gambar' => $namaGambar,
             'jabatan' => $request->jabatan,
+            'gambar' => $namaGambar,
         ]);
 
         return redirect()
@@ -41,6 +47,7 @@ class OrganigramController extends Controller
             ->with('success', 'Data organigram berhasil ditambahkan.');
     }
 
+    // Memperbarui data organigram
     public function update(Request $request, $id_organigram)
     {
         $request->validate([
@@ -57,7 +64,15 @@ class OrganigramController extends Controller
         ];
 
         if ($request->hasFile('gambar')) {
+
+            // Hapus gambar lama jika ada
+            if ($organigram->gambar) {
+                Storage::disk('public')->delete($organigram->gambar);
+            }
+
+            // Simpan gambar baru
             $namaGambar = $request->file('gambar')->store('organigram', 'public');
+
             $data['gambar'] = $namaGambar;
         }
 
@@ -68,9 +83,15 @@ class OrganigramController extends Controller
             ->with('success', 'Data organigram berhasil diperbarui.');
     }
 
+    // Menghapus data organigram
     public function destroy($id_organigram)
     {
         $organigram = Organigram::findOrFail($id_organigram);
+
+        // Hapus file gambar
+        if ($organigram->gambar) {
+            Storage::disk('public')->delete($organigram->gambar);
+        }
 
         $organigram->delete();
 

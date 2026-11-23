@@ -1,10 +1,9 @@
+
 <!DOCTYPE html>
 <html lang="id">
 
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Profil - UPTD Litbang Keramik Plered Purwakarta</title>
@@ -14,160 +13,93 @@
 
     <link rel="stylesheet"
           href="{{ asset('css/backend/profil.css') }}">
-
 </head>
-
 
 <body>
 
 <div class="dashboard">
 
-
-    <!-- ================= SIDEBAR ================= -->
-
+    <!-- SIDEBAR -->
     <aside class="sidebar" id="sidebar">
 
         <div class="brand">
-
             <div class="brand-icon">
-
-                <img
-                    src="{{ asset('images/logo.png') }}"
-                    alt="Logo UPTD">
-
+                <img src="{{ asset('images/logo.png') }}" alt="Logo UPTD">
             </div>
 
             <div class="brand-text">
-
                 <strong>UPTD LITBANG</strong>
-
                 <strong>KERAMIK</strong>
-
                 <span>PLERED PURWAKARTA</span>
-
             </div>
-
         </div>
-
 
         <div class="sidebar-line"></div>
 
-
-        <div class="menu-title">
-            MENU UTAMA
-        </div>
-
+        <div class="menu-title">MENU UTAMA</div>
 
         <nav class="menu">
 
-            <a href="{{ route('backend.beranda') }}"
-               class="menu-item">
-
+            <a href="{{ route('backend.beranda') }}" class="menu-item">
                 <i class="fa-solid fa-house"></i>
-
                 <span>Dashboard</span>
-
             </a>
 
-
-            <a href="{{ route('backend.profil') }}"
-               class="menu-item active">
-
+            <a href="{{ route('backend.profil') }}" class="menu-item active">
                 <i class="fa-solid fa-user"></i>
-
                 <span>Profil</span>
-
             </a>
 
-
-            <a href="{{ route('backend.galeri') }}"
-               class="menu-item">
-
+            <a href="{{ route('backend.galeri') }}" class="menu-item">
                 <i class="fa-solid fa-image"></i>
-
                 <span>Galeri</span>
-
             </a>
 
-
-            <a href="{{ route('backend.artikel') }}"
-               class="menu-item">
-
+            <a href="{{ route('backend.artikel') }}" class="menu-item">
                 <i class="fa-solid fa-newspaper"></i>
-
                 <span>Artikel</span>
-
             </a>
 
-
-            <a href="{{ route('backend.layanan') }}"
-               class="menu-item">
-
+            <a href="{{ route('backend.layanan') }}" class="menu-item">
                 <i class="fa-solid fa-layer-group"></i>
-
                 <span>Layanan</span>
-
             </a>
 
-
-            <a href="{{ route('backend.organigram') }}"
-               class="menu-item">
-
+            <a href="{{ route('backend.organigram') }}" class="menu-item">
                 <i class="fa-solid fa-sitemap"></i>
-
                 <span>Organigram</span>
-
             </a>
 
         </nav>
 
-
         <div class="logout">
-
             <form action="{{ route('logout') }}" method="POST">
-
                 @csrf
 
                 <button type="submit">
-
                     <i class="fa-solid fa-right-from-bracket"></i>
-
                     <span>Keluar</span>
-
                 </button>
-
             </form>
-
         </div>
 
     </aside>
 
-
-
-    <!-- ================= MAIN ================= -->
-
+    <!-- MAIN -->
     <main class="main">
 
-
-        <!-- ================= TOPBAR ================= -->
-
+        <!-- TOPBAR -->
         <header class="topbar">
 
             <div class="topbar-left">
 
-                <button
-                    class="toggle-btn"
-                    id="toggleBtn"
-                    type="button">
-
+                <button class="toggle-btn" id="toggleBtn" type="button">
                     <i class="fa-solid fa-bars"></i>
-
                 </button>
 
                 <h1>Profil</h1>
 
             </div>
-
 
             <div class="admin">
 
@@ -182,23 +114,14 @@
 
             </div>
 
-
         </header>
 
-
-
-        <!-- ================= CONTENT ================= -->
-
+        <!-- CONTENT -->
         <section class="content">
-
-
-            <!-- JUDUL -->
 
             <div class="page-heading">
 
-                <h2>
-                    Profil UPTD
-                </h2>
+                <h2>Profil UPTD</h2>
 
                 <p>
                     Kelola informasi website UPTD Litbang Keramik
@@ -207,45 +130,25 @@
 
             </div>
 
-
-
-            <!-- ================= PESAN ================= -->
-
+            <!-- PESAN -->
             @if (session('success'))
-
                 <div class="alert-success">
-
                     <i class="fa-solid fa-circle-check"></i>
-
                     {{ session('success') }}
-
                 </div>
-
             @endif
-
 
             @if ($errors->any())
-
                 <div class="alert-error">
-
                     <ul>
-
                         @foreach ($errors->all() as $error)
-
                             <li>{{ $error }}</li>
-
                         @endforeach
-
                     </ul>
-
                 </div>
-
             @endif
 
-
-
-            <!-- ================= FORM ================= -->
-
+            <!-- FORM -->
             <form
                 id="profilForm"
                 action="{{ route('backend.profil.update') }}"
@@ -253,33 +156,19 @@
                 enctype="multipart/form-data">
 
                 @csrf
-
                 @method('PUT')
 
-
-
-                <!-- ================= PROFIL ================= -->
-
+                <!-- PROFIL -->
                 <div class="profile-grid">
 
-
-                    <!-- ================= KIRI ================= -->
-
+                    <!-- KIRI -->
                     <div class="profile-card">
 
-                        <h3>
-                            Informasi Profil
-                        </h3>
-
-
-
-                        <!-- JUDUL -->
+                        <h3>Informasi Profil</h3>
 
                         <div class="form-group">
 
-                            <label for="judul">
-                                Judul
-                            </label>
+                            <label for="judul">Judul</label>
 
                             <input
                                 type="text"
@@ -290,16 +179,9 @@
 
                         </div>
 
-
-
-                        <!-- GAMBAR -->
-
                         <div class="form-group">
 
-                            <label>
-                                Gambar
-                            </label>
-
+                            <label>Gambar</label>
 
                             <div class="image-preview">
 
@@ -323,20 +205,10 @@
 
                         </div>
 
-
-
-                        <!-- UPLOAD -->
-
-                        <label
-                            for="gambarProfil"
-                            class="upload-btn">
-
+                        <label for="gambarProfil" class="upload-btn">
                             <i class="fa-solid fa-upload"></i>
-
                             Upload Gambar
-
                         </label>
-
 
                         <input
                             type="file"
@@ -347,245 +219,109 @@
 
                     </div>
 
-
-
-                    <!-- ================= KANAN ================= -->
-
+                    <!-- KANAN -->
                     <div class="profile-card description-card">
 
-                        <h3>
-                            Deskripsi
-                        </h3>
-
-
+                        <h3>Deskripsi</h3>
 
                         <!-- EDITOR -->
-
                         <div class="editor">
-
-
-                            <!-- TOOLBAR -->
 
                             <div class="editor-toolbar">
 
-
-                                <!-- PARAGRAPH -->
-
                                 <select id="formatBlock">
-
-                                    <option value="p">
-                                        Paragraph
-                                    </option>
-
-                                    <option value="h1">
-                                        Heading 1
-                                    </option>
-
-                                    <option value="h2">
-                                        Heading 2
-                                    </option>
-
-                                    <option value="h3">
-                                        Heading 3
-                                    </option>
-
+                                    <option value="p">Paragraph</option>
+                                    <option value="h1">Heading 1</option>
+                                    <option value="h2">Heading 2</option>
+                                    <option value="h3">Heading 3</option>
                                 </select>
 
-
-
-                                <!-- BOLD -->
-
-                                <button
-                                    type="button"
-                                    data-command="bold">
-
+                                <button type="button" data-command="bold"
+                                        title="Bold">
                                     <i class="fa-solid fa-bold"></i>
-
                                 </button>
 
-
-
-                                <!-- ITALIC -->
-
-                                <button
-                                    type="button"
-                                    data-command="italic">
-
+                                <button type="button" data-command="italic"
+                                        title="Italic">
                                     <i class="fa-solid fa-italic"></i>
-
                                 </button>
 
-
-
-                                <!-- UNDERLINE -->
-
-                                <button
-                                    type="button"
-                                    data-command="underline">
-
+                                <button type="button" data-command="underline"
+                                        title="Underline">
                                     <i class="fa-solid fa-underline"></i>
-
                                 </button>
 
-
-
-                                <!-- STRIKE -->
-
-                                <button
-                                    type="button"
-                                    data-command="strikeThrough">
-
+                                <button type="button" data-command="strikeThrough"
+                                        title="Strikethrough">
                                     <i class="fa-solid fa-strikethrough"></i>
-
                                 </button>
 
-
-
-                                <!-- UNDO -->
-
-                                <button
-                                    type="button"
-                                    data-command="undo">
-
+                                <button type="button" data-command="undo"
+                                        title="Undo">
                                     <i class="fa-solid fa-rotate-left"></i>
-
                                 </button>
 
-
-
-                                <!-- REDO -->
-
-                                <button
-                                    type="button"
-                                    data-command="redo">
-
+                                <button type="button" data-command="redo"
+                                        title="Redo">
                                     <i class="fa-solid fa-rotate-right"></i>
-
                                 </button>
 
-
-
-                                <!-- ALIGN LEFT -->
-
-                                <button
-                                    type="button"
-                                    data-command="justifyLeft">
-
+                                <button type="button" data-command="justifyLeft"
+                                        title="Rata kiri">
                                     <i class="fa-solid fa-align-left"></i>
-
                                 </button>
 
-
-
-                                <!-- ALIGN CENTER -->
-
-                                <button
-                                    type="button"
-                                    data-command="justifyCenter">
-
+                                <button type="button" data-command="justifyCenter"
+                                        title="Rata tengah">
                                     <i class="fa-solid fa-align-center"></i>
-
                                 </button>
 
-
-
-                                <!-- ALIGN RIGHT -->
-
-                                <button
-                                    type="button"
-                                    data-command="justifyRight">
-
+                                <button type="button" data-command="justifyRight"
+                                        title="Rata kanan">
                                     <i class="fa-solid fa-align-right"></i>
-
                                 </button>
 
-
-
-                                <!-- JUSTIFY -->
-
-                                <button
-                                    type="button"
-                                    data-command="justifyFull">
-
+                                <button type="button" data-command="justifyFull"
+                                        title="Rata kanan kiri">
                                     <i class="fa-solid fa-align-justify"></i>
-
                                 </button>
 
-
-
-                                <!-- LINK -->
-
-                                <button
-                                    type="button"
-                                    data-command="createLink">
-
-                                    <i class="fa-solid fa-link"></i>
-
-                                </button>
-
-
-
-                                <!-- LIST -->
-
-                                <button
-                                    type="button"
-                                    data-command="insertUnorderedList">
-
+                                <button type="button" data-command="insertUnorderedList"
+                                        title="Bullet">
                                     <i class="fa-solid fa-list"></i>
-
                                 </button>
 
-
-
-                                <!-- NUMBER LIST -->
-
-                                <button
-                                    type="button"
-                                    data-command="insertOrderedList">
-
+                                <button type="button" data-command="insertOrderedList"
+                                        title="Numbering">
                                     <i class="fa-solid fa-list-ol"></i>
-
                                 </button>
-
 
                             </div>
 
-
-
-                            <!-- EDITOR CONTENT -->
-
+                            <!-- ISI EDITOR -->
                             <div
                                 class="editor-content"
                                 id="editorContent"
-                                contenteditable="true">{!! $data['deskripsi'] !!}</div>
-
+                                contenteditable="true">{!! $data['deskripsi'] ?? '' !!}</div>
 
                         </div>
 
-
-
-                        <!-- DATA DESKRIPSI -->
-
+                        <!-- INPUT DESKRIPSI -->
                         <input
                             type="hidden"
                             name="deskripsi"
                             id="deskripsi">
 
-
-
                         <!-- SEJARAH -->
-
                         <div class="form-group sejarah">
 
-                            <label for="sejarah">
-                                Sejarah Singkat
-                            </label>
+                            <label for="sejarah">Sejarah Singkat</label>
 
                             <textarea
                                 id="sejarah"
                                 name="sejarah"
                                 rows="5"
-                                required>{{ $data['sejarah'] }}</textarea>
+                                required>{{ $data['sejarah'] ?? '' }}</textarea>
 
                         </div>
 
@@ -593,67 +329,44 @@
 
                 </div>
 
-
-
-                <!-- ================= VISI MISI ================= -->
-
+                <!-- VISI MISI -->
                 <div class="visi-misi-grid">
-
-
-                    <!-- VISI -->
 
                     <div class="profile-card visi-card">
 
-                        <h3>
-                            Visi
-                        </h3>
+                        <h3>Visi</h3>
 
                         <textarea
                             id="visi"
                             name="visi"
                             rows="7"
-                            required>{{ $data['visi'] }}</textarea>
+                            required>{{ $data['visi'] ?? '' }}</textarea>
 
                     </div>
 
-
-
-                    <!-- MISI -->
-
                     <div class="profile-card misi-card">
 
-                        <h3>
-                            Misi
-                        </h3>
+                        <h3>Misi</h3>
 
                         <textarea
                             id="misi"
                             name="misi"
                             rows="7"
-                            required>{{ $data['misi'] }}</textarea>
+                            required>{{ $data['misi'] ?? '' }}</textarea>
 
                     </div>
 
                 </div>
 
-
-
-                <!-- ================= SIMPAN ================= -->
-
+                <!-- SIMPAN -->
                 <div class="save-area">
 
-                    <button
-                        class="save-btn"
-                        type="submit">
-
+                    <button class="save-btn" type="submit">
                         <i class="fa-solid fa-floppy-disk"></i>
-
                         Simpan Perubahan
-
                     </button>
 
                 </div>
-
 
             </form>
 
@@ -661,214 +374,115 @@
 
     </main>
 
-
 </div>
 
-
-
-<!-- =========================================================
-     JAVASCRIPT
-========================================================= -->
-
+<!-- JAVASCRIPT -->
 <script>
 
-
-    /* =========================
-       SIDEBAR
-    ========================= */
-
-    const toggleBtn =
-        document.getElementById('toggleBtn');
-
-    const sidebar =
-        document.getElementById('sidebar');
-
+    // SIDEBAR
+    const toggleBtn = document.getElementById('toggleBtn');
+    const sidebar = document.getElementById('sidebar');
 
     toggleBtn.addEventListener('click', function () {
 
         if (window.innerWidth <= 700) {
-
             sidebar.classList.toggle('mobile-open');
-
             toggleBtn.classList.toggle('mobile-toggle-open');
-
         } else {
-
             sidebar.classList.toggle('hide');
-
         }
 
     });
 
 
-
-    /* =========================
-       UPLOAD GAMBAR
-    ========================= */
-
-    const gambarProfil =
-        document.getElementById('gambarProfil');
-
-    const previewGambar =
-        document.getElementById('previewGambar');
-
+    // UPLOAD GAMBAR
+    const gambarProfil = document.getElementById('gambarProfil');
+    const previewGambar = document.getElementById('previewGambar');
 
     gambarProfil.addEventListener('change', function () {
 
-        const file =
-            this.files[0];
+        const file = this.files[0];
 
+        if (!file) return;
 
-        if (!file) {
+        const reader = new FileReader();
 
-            return;
+        reader.onload = function (event) {
 
-        }
+            if (previewGambar) {
 
+                previewGambar.src = event.target.result;
 
-        const reader =
-            new FileReader();
+            } else {
 
+                const placeholder =
+                    document.getElementById('imagePlaceholder');
 
-        reader.onload =
-            function (event) {
+                if (placeholder) {
 
-                if (previewGambar) {
-
-                    previewGambar.src =
-                        event.target.result;
-
-                } else {
-
-                    const placeholder =
-                        document.getElementById('imagePlaceholder');
-
-                    if (placeholder) {
-
-                        placeholder.innerHTML =
-                            '<img id="previewGambar" src="' +
-                            event.target.result +
-                            '" alt="Preview Gambar">';
-
-                    }
+                    placeholder.innerHTML =
+                        '<img id="previewGambar" src="' +
+                        event.target.result +
+                        '" alt="Preview Gambar">';
 
                 }
 
-            };
+            }
 
+        };
 
         reader.readAsDataURL(file);
 
     });
 
 
-
-    /* =========================
-       EDITOR
-    ========================= */
-
-    const editor =
-        document.getElementById('editorContent');
-
-
-    const formatBlock =
-        document.getElementById('formatBlock');
+    // EDITOR
+    const editor = document.getElementById('editorContent');
+    const formatBlock = document.getElementById('formatBlock');
+    const toolbarButtons = document.querySelectorAll(
+        '.editor-toolbar button'
+    );
 
 
-    const toolbarButtons =
-        document.querySelectorAll(
-            '.editor-toolbar button'
+    // FORMAT PARAGRAPH / HEADING
+    formatBlock.addEventListener('change', function () {
+
+        editor.focus();
+
+        document.execCommand(
+            'formatBlock',
+            false,
+            this.value
         );
 
+    });
 
 
-    /* =========================
-       PARAGRAPH / HEADING
-    ========================= */
+    // TOOLBAR
+    toolbarButtons.forEach(function (button) {
 
-    formatBlock.addEventListener(
-        'change',
-        function () {
+        button.addEventListener('mousedown', function (event) {
+
+            // Menjaga seleksi teks saat tombol toolbar diklik
+            event.preventDefault();
+
+        });
+
+        button.addEventListener('click', function () {
+
+            const command = this.getAttribute('data-command');
 
             editor.focus();
 
+            document.execCommand(command, false, null);
 
-            document.execCommand(
-                'formatBlock',
-                false,
-                this.value
-            );
+        });
 
-        }
-    );
+    });
 
 
-
-    /* =========================
-       TOOLBAR BUTTON
-    ========================= */
-
-    toolbarButtons.forEach(
-        function (button) {
-
-            button.addEventListener(
-                'click',
-                function () {
-
-                    const command =
-                        this.getAttribute(
-                            'data-command'
-                        );
-
-
-                    editor.focus();
-
-
-                    if (
-                        command ===
-                        'createLink'
-                    ) {
-
-                        const url =
-                            prompt(
-                                'Masukkan URL:'
-                            );
-
-
-                        if (url) {
-
-                            document.execCommand(
-                                'createLink',
-                                false,
-                                url
-                            );
-
-                        }
-
-                    } else {
-
-                        document.execCommand(
-                            command,
-                            false,
-                            null
-                        );
-
-                    }
-
-                }
-            );
-
-        }
-    );
-
-
-
-    /* =========================
-       SIMPAN EDITOR
-    ========================= */
-
+    // SIMPAN DESKRIPSI
     const form = document.getElementById('profilForm');
-
     const deskripsi = document.getElementById('deskripsi');
 
     form.addEventListener('submit', function () {
@@ -877,10 +491,7 @@
 
     });
 
-
 </script>
 
-
 </body>
-
 </html>

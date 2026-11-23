@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="id">
 
@@ -7,78 +8,53 @@
 
     <title>Profil - UPTD Litbang Keramik</title>
 
-    <link rel="stylesheet"
-          href="{{ asset('css/profil.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/profil.css') }}">
 
     <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
 <body>
 
-@include('layouts.navbar')
-
-
-    <!-- ================= PROFIL ================= -->
+    @include('layouts.navbar')
 
     <main class="content">
 
+        <!-- ==================================
+             PROFIL DAN FOTO
+        =================================== -->
+
         <section class="profile-top">
 
-
-            <!-- KIRI -->
-
+            <!-- KIRI: TEKS PROFIL -->
             <div class="profile-text">
 
-                <h1>
-                    PROFIL
-                </h1>
+                <h1>PROFIL</h1>
 
-                <h2>
-                    {{ $profil->judul ?? 'UPTD LITBANG KERAMIK' }}
-                </h2>
+                <h2>{{ $profil->judul ?? 'UPTD LITBANG KERAMIK' }}</h2>
 
-                <p>
-                    {{ $data['deskripsi'] ?? '' }}
-                </p>
-
-
-                <!-- SEJARAH -->
-
-                <div class="history">
-
-                    <h2>
-                        SEJARAH
-                    </h2>
-
-                    <div class="history-line"></div>
-
-                    <p>
-                        {!! nl2br(e($data['sejarah'] ?? '')) !!}
-                    </p>
-
+                <!-- DESKRIPSI -->
+                <div class="description">
+                    {!! $data['deskripsi'] ?? '' !!}
                 </div>
 
             </div>
 
 
-            <!-- KANAN / FOTO -->
-
+            <!-- KANAN: FOTO PROFIL -->
             <div class="profile-image">
 
                 @if($profil && $profil->gambar)
 
                     <img
                         src="{{ asset('storage/' . $profil->gambar) }}"
-                        alt="{{ $profil->judul }}"
-                    >
+                        alt="{{ $profil->judul }}">
 
                 @else
 
                     <img
                         src="{{ asset('img/gedung.jpg') }}"
-                        alt="Gedung UPTD Litbang Keramik"
-                    >
+                        alt="Gedung UPTD Litbang Keramik">
 
                 @endif
 
@@ -87,27 +63,39 @@
         </section>
 
 
-        <!-- ================= VISI MISI ================= -->
+        <!-- ==================================
+             SEJARAH FULL WIDTH
+        =================================== -->
+
+        <section class="history">
+
+            <h2>SEJARAH KERAMIK PLERED</h2>
+
+            <div class="history-line"></div>
+
+            <p>
+                {!! nl2br(e($data['sejarah'] ?? '')) !!}
+            </p>
+
+        </section>
+
+
+        <!-- ==================================
+             VISI DAN MISI
+        =================================== -->
 
         <section class="vision-mission">
 
-            <h2>
-                VISI &amp; MISI
-            </h2>
+            <h2>VISI &amp; MISI</h2>
 
             <div class="title-line"></div>
 
-
             <div class="vision-mission-content">
 
-
                 <!-- VISI -->
-
                 <div class="vision">
 
-                    <h3>
-                        VISI:
-                    </h3>
+                    <h3>VISI:</h3>
 
                     <p>
                         {!! nl2br(e($data['visi'] ?? '')) !!}
@@ -117,12 +105,9 @@
 
 
                 <!-- MISI -->
-
                 <div class="mission">
 
-                    <h3>
-                        MISI:
-                    </h3>
+                    <h3>MISI:</h3>
 
                     <ol>
 
@@ -130,9 +115,7 @@
 
                             @if(trim($misi) !== '')
 
-                                <li>
-                                    {{ $misi }}
-                                </li>
+                                <li>{{ $misi }}</li>
 
                             @endif
 
@@ -148,17 +131,23 @@
 
     </main>
 
+
+    <!-- FOOTER -->
     @include('layouts.footer')
 
 
-<!-- ================= JAVASCRIPT ================= -->
+    <!-- SCRIPT NAVBAR -->
+    <script>
 
-<script>
-    function toggleMenu() {
-        const menu = document.getElementById("menu");
-        menu.classList.toggle("show");
-    }
-</script>
+        function toggleMenu() {
+
+            const menu = document.getElementById("menu");
+
+            menu.classList.toggle("show");
+
+        }
+
+    </script>
 
 </body>
 

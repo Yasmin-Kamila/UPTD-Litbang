@@ -61,16 +61,7 @@
                         <i class="fa-brands fa-youtube"></i>
 
                     </a>
-
-
-                    <a href="#">
-
-                        <i class="fa-brands fa-facebook-f"></i>
-
-                    </a>
-
                 </div>
-
             </div>
 
 

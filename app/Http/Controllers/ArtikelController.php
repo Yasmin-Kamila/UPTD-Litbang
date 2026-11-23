@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Storage;
 
 class ArtikelController extends Controller
 {
+    // ================= TAMPILKAN ARTIKEL ADMIN =================
+
     public function index()
     {
         $artikel = Artikel::orderBy('tanggal', 'desc')->get();
@@ -15,12 +17,28 @@ class ArtikelController extends Controller
         return view('backend.artikel', compact('artikel'));
     }
 
+
+    // ================= TAMPILKAN ARTIKEL FRONTEND =================
+
     public function frontend()
     {
         $artikel = Artikel::orderBy('tanggal', 'desc')->get();
 
         return view('artikel', compact('artikel'));
     }
+
+
+    // ================= DETAIL ARTIKEL =================
+
+    public function detail($id)
+    {
+        $artikel = Artikel::findOrFail($id);
+
+        return view('detail-artikel', compact('artikel'));
+    }
+
+
+    // ================= TAMBAH ARTIKEL =================
 
     public function store(Request $request)
     {
@@ -48,6 +66,9 @@ class ArtikelController extends Controller
             ->route('backend.artikel')
             ->with('success', 'Artikel berhasil ditambahkan.');
     }
+
+
+    // ================= EDIT ARTIKEL =================
 
     public function update(Request $request, $id)
     {
@@ -82,6 +103,9 @@ class ArtikelController extends Controller
             ->route('backend.artikel')
             ->with('success', 'Artikel berhasil diperbarui.');
     }
+
+
+    // ================= HAPUS ARTIKEL =================
 
     public function destroy($id)
     {

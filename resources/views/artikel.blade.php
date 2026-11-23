@@ -6,51 +6,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Artikel</title>
+    <title>Artikel - UPTD Litbang Keramik</title>
 
-    <link rel="stylesheet"
-          href="{{ asset('css/artikel.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/artikel.css') }}">
 
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
 </head>
 
-
 <body>
 
 <div class="website">
 
-@include('layouts.navbar')
-
+    @include('layouts.navbar')
 
 
     <!-- ================= ARTIKEL ================= -->
 
     <main class="artikel">
 
-
         <h1>
             ARTIKEL
         </h1>
 
-
-
         <div class="artikel-grid">
-
-
-            <!-- ================= DATA ARTIKEL ================= -->
 
             @forelse ($artikel as $item)
 
-
                 <article class="artikel-card">
-
 
                     <!-- GAMBAR -->
 
                     <div class="artikel-image">
-
 
                         @if ($item->gambar)
 
@@ -66,82 +55,74 @@
 
                         @endif
 
-
                     </div>
 
 
+                    <!-- INFORMASI ARTIKEL -->
 
-                    <!-- JUDUL -->
+                    <div class="artikel-content">
 
-                    <h2>
+                        <div class="tanggal">
 
-                        {{ $item->judul }}
+                            <i class="fa-regular fa-calendar"></i>
 
-                    </h2>
+                            @if ($item->tanggal)
+                                {{ \Carbon\Carbon::parse($item->tanggal)->translatedFormat('d F Y') }}
+                            @endif
 
-
-
-                    <!-- TANGGAL -->
-
-                    <div class="tanggal">
+                        </div>
 
 
-                        @if ($item->tanggal)
+                        <h2>
+                            {{ $item->judul }}
+                        </h2>
 
-                            {{ \Carbon\Carbon::parse($item->tanggal)->format('d F Y') }}
 
-                        @endif
+                        <p class="artikel-isi">
 
+                            {{ \Illuminate\Support\Str::limit(strip_tags($item->isi), 150) }}
+
+                        </p>
+
+
+                        <!-- TOMBOL DETAIL -->
+
+                        <a href="{{ route('artikel.detail', $item->id_artikel) }}"
+                           class="baca-selengkapnya">
+
+                            Baca Selengkapnya
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </a>
 
                     </div>
-
-
-
-                    <!-- ISI ARTIKEL -->
-
-                    <p class="artikel-isi">
-
-                        {{ $item->isi }}
-
-                    </p>
 
                 </article>
 
 
-            <!-- ================= JIKA KOSONG ================= -->
-
             @empty
-
 
                 <div class="artikel-kosong">
 
-
                     <i class="fa-solid fa-circle-info"></i>
 
-
                     <p>
-
                         Belum ada artikel yang tersedia.
-
                     </p>
-
 
                 </div>
 
-
             @endforelse
-
 
         </div>
 
-
     </main>
+
 
     @include('layouts.footer')
 
-
 </div>
-
 
 
 <!-- ================= JAVASCRIPT ================= -->
@@ -150,8 +131,7 @@
 
     function toggleMenu() {
 
-        const menu =
-            document.getElementById("menu");
+        const menu = document.getElementById("menu");
 
         menu.classList.toggle("show");
 
@@ -159,7 +139,5 @@
 
 </script>
 
-
 </body>
-
 </html>
